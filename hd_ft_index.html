@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOLEX - 일본/미국 구매대행</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/hd_ft.css">
+</head>
+<body>
+
+    <header class="fixed-top bg-white shadow-sm">
+        <div class="top-banner text-center text-white py-1">
+            <div class="banner-ticker">
+                <div class="ticker-item">주말선착순 50% 할인 이벤트 진행 중!</div>
+                <div class="ticker-item">일본/미국 실시간 최저가 구매대행 KOLEX</div>
+                <div class="ticker-item">신규 가입 시 3,000원 할인 쿠폰 즉시 지급!</div>
+            </div>
+        </div>
+
+        <div class="container-fluid px-4 py-3">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6 header-logo-zone">
+                    <a href="#" class="logo-wrapper">
+                        <img src="logo_jp.png" alt="KOLEX JP" class="main-logo logo-front">
+                        <img src="logo_us.png" alt="KOLEX US" class="main-logo logo-back">
+                    </a>
+                    <small class="d-block text-muted mt-1 logo-subtext">일본 구매대행 콜렉스</small>
+                </div>
+
+                <div class="col-md-5 d-none d-md-block">
+                    <form class="search-form position-relative">
+                        <input type="text" class="form-control rounded-pill pe-5" placeholder="원하는 상품을 검색해보세요.">
+                        <button type="submit" class="btn position-absolute end-0 top-50 translate-middle-y me-2 bg-transparent text-purple">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-4 col-6 d-flex align-items-center justify-content-end gap-3">
+                    <div class="header-icons d-flex gap-3 fs-5 text-secondary">
+                        <a href="#" class="text-reset"><i class="bi bi-person"></i></a>
+                        <a href="#" class="text-reset"><i class="bi bi-heart"></i></a>
+                        <a href="#" class="text-reset"><i class="bi bi-cart"></i></a>
+                        <a href="#" class="text-reset"><i class="bi bi-bell"></i></a>
+                    </div>
+                    
+                    <div class="country-toggle dropdown">
+                        <button class="btn btn-sm dropdown-toggle text-white rounded-1" type="button" id="countrySelect" data-bs-toggle="dropdown" aria-expanded="false">
+                            JP / KR
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="countrySelect">
+                            <li><a class="dropdown-item active" href="#" onclick="changeCountry('JP')">🇯🇵 일본 구매대행</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeCountry('US')">🇺🇸 미국 구매대행</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg py-0 border-top border-bottom">
+            <div class="container-fluid px-0">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 nav-fill align-items-center">
+                        <li class="nav-item bg-dark text-white py-2 px-4 h-100 d-flex align-items-center justify-content-center fw-bold" style="max-width: 200px;">
+                            <i class="bi bi-list me-2"></i> 백화점화장품
+                        </li>
+                        <li class="nav-item"><a class="nav-link py-3" href="#"><i class="bi bi-flower1 text-primary me-1"></i> 트랜드</a></li>
+                        <li class="nav-item"><a class="nav-link py-3" href="#"><i class="bi bi-gift text-danger me-1"></i> EVENT</a></li>
+                        <li class="nav-item"><a class="nav-link py-3" href="#"><i class="bi bi-heart-pulse me-1"></i> 웰니스용품</a></li>
+                        <li class="nav-item"><a class="nav-link py-3" href="#">아웃도어제품</a></li>
+                        <li class="nav-item"><a class="nav-link py-3" href="#">덕후IP굿즈</a></li>
+                        <li class="nav-item"><a class="nav-link py-3" href="#">기획전</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div style="margin-top: 200px; min-height: 60px;"></div>
+
+    <footer class="footer-zone text-dark pt-5">
+        <div class="container-fluid px-5 pb-4">
+            <div class="row g-4 border-bottom pb-4">
+                <div class="col-lg-3 col-md-6 border-end-md">
+                    <h6 class="fw-bold mb-3">공지사항</h6>
+                    <ul class="list-unstyled small text-muted lh-lg mb-4">
+                        <li><a href="#" class="text-reset text-decoration-none">[안내] 5월 일본 골든위크 관련 (4월29일~5월6일)</a></li>
+                        <li><a href="#" class="text-reset text-decoration-none">[안내] 배터리 내장 상품 일본 반송 불가 안내</a></li>
+                    </ul>
+                    
+                    <h6 class="fw-bold mb-3">적용환율</h6>
+                    <div class="d-flex gap-2">
+                        <div class="exchange-box p-2 border bg-white rounded text-center d-flex align-items-center gap-2">
+                            <span class="fs-4">🇯🇵</span>
+                            <div>
+                                <small class="d-block text-muted text-start" style="font-size: 10px;">1 ¥</small>
+                                <strong class="text-danger small">9.9</strong>
+                            </div>
+                        </div>
+                        <div class="exchange-box p-2 border bg-white rounded text-center d-flex align-items-center gap-2">
+                            <span class="fs-4">🇺🇸</span>
+                            <div>
+                                <small class="d-block text-muted text-start" style="font-size: 10px;">1 $</small>
+                                <strong class="text-danger small">1538.2</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-3">고객 지원</h6>
+                            <ul class="list-unstyled small text-muted lh-lg">
+                                <li><a href="#" class="text-reset text-decoration-none">배송 안내</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none">반품 정책</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none">결제 방법</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none">자주 묻는 질문</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-3">회사 정보</h6>
+                            <ul class="list-unstyled small text-muted lh-lg">
+                                <li><a href="#" class="text-reset text-decoration-none">Kolex 소개</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none">블로그</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none">언론 보도</a></li>
+                                <li><a href="#" class="text-reset text-decoration-none">제휴 문의</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cs-info mt-3 p-3 bg-white border rounded">
+                        <div class="d-flex justify-between align-items-center">
+                            <strong class="fs-5 text-purple">1644-8193</strong>
+                            <span class="badge bg-secondary ms-2">전화문의 클릭</span>
+                        </div>
+                        <p class="mb-0 text-muted mt-1" style="font-size: 11px;">
+                            상담시간 09:00 ~ 19:00 (점심시간 13:00~14:00) / 토,일,공휴일 휴무
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12">
+                    <h6 class="fw-bold mb-2">뉴스레터</h6>
+                    <p class="small text-muted mb-3">Kolex의 최신 아이템과 특가 정보를 가장 먼저 받아보세요.</p>
+                    
+                    <form id="newsletterForm" onsubmit="handleSubscribe(event)" class="row g-2">
+                        <div class="col-8">
+                            <input type="email" id="subscriberEmail" class="form-control py-2 border-dark rounded-0" placeholder="이메일 입력" required>
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-dark w-100 py-2 rounded-0 fw-bold">구독</button>
+                        </div>
+                    </form>
+                    <p class="mt-2 text-muted" style="font-size: 11px;">구독하면 개인정보처리방침에 동의하며 회사로부터 업데이트를 받기로 동의합니다.</p>
+                    
+                    <div class="d-flex gap-3 mt-4 footer-quick-icons">
+                        <a href="#" class="text-center text-dark text-decoration-none small"><i class="bi bi-question-square d-block fs-4"></i>FAQ</a>
+                        <a href="#" class="text-center text-dark text-decoration-none small"><i class="bi bi-building d-block fs-4"></i>회사소개</a>
+                        <a href="#" class="text-center text-dark text-decoration-none small"><i class="bi bi-shield-check d-block fs-4"></i>정보취급방침</a>
+                        <a href="#" class="text-center text-dark text-decoration-none small"><i class="bi bi-file-earmark-text d-block fs-4"></i>이용약관</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom py-3 text-white">
+            <div class="container-fluid px-5 d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div class="small d-flex gap-3 flex-wrap">
+                    <span>© 2026 Kolex. 모든 권리 보유.</span>
+                    <a href="#" class="text-white text-decoration-none fw-bold">개인정보처리방침</a>
+                    <a href="#" class="text-white text-decoration-none">이용약관</a>
+                    <a href="#" class="text-white text-decoration-none">쿠키 설정</a>
+                </div>
+                <div class="sns-icons d-flex gap-3 fs-5">
+                    <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // 1. 국가 선택 (US / JP 탭 클릭 시 로직 처리 인터페이스)
+        function changeCountry(country) {
+            const toggleBtn = document.getElementById('countrySelect');
+            const subtext = document.querySelector('.logo-subtext');
+            const logoWrapper = document.querySelector('.logo-wrapper');
+            
+            if(country === 'JP') {
+                toggleBtn.innerText = "JP / KR";
+                toggleBtn.style.backgroundColor = "#92277F";
+                subtext.innerText = "일본 구매대행 콜렉스";
+                logoWrapper.classList.remove('flipped'); // 일본 로고 노출
+            } else {
+                toggleBtn.innerText = "US / KR";
+                toggleBtn.style.backgroundColor = "#4A90E2"; // 미국용 블루 포인트 변경 가능
+                subtext.innerText = "미국 구매대행 콜렉스";
+                logoWrapper.classList.add('flipped'); // 미국 로고 노출 애니메이션 트리거
+            }
+        }
+
+        // 2. 뉴스레터 구독 처리 (추후 backend 이메일 연동 포인트)
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const email = document.getElementById('subscriberEmail').value;
+            // 이곳에 나중에 AJAX나 Google Apps Script API 전송 코드를 연동하시면 됩니다.
+            alert(`행운의 특가 소식을 전해드릴게요!\n[ ${email} ] 구독이 완료되었습니다.`);
+            document.getElementById('subscriberEmail').value = "";
+        }
+    </script>
+</body>
+</html>

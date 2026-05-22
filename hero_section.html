@@ -1,0 +1,132 @@
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="css/my_style.css">
+
+<section class="hero-section">
+  <div class="swiper heroSwiper">
+
+    <div class="swiper-wrapper">
+
+      <!-- slide 1 -->
+      <div class="swiper-slide">
+        <img src="./슬라이드배너1.jpg" alt="골프 플랫폼 배너">
+      </div>
+
+      <!-- slide 2 -->
+      <div class="swiper-slide">
+        <img src="./슬라이드배너_중심.jpg" alt="출석체크 배너">
+      </div>
+
+      <!-- slide 3 -->
+      <div class="swiper-slide">
+        <img src="./슬라이드배너_옆.jpg" alt="합배송 배너">
+      </div>
+
+    </div>
+
+    <!-- pagination -->
+    <div class="swiper-pagination"></div>
+
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const heroSwiper = new Swiper(".heroSwiper", {
+    loop: true,
+
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+
+    speed: 900,
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .hero-section {
+    width: 100%;
+    overflow: hidden;
+    background: #f5f5f5;
+  }
+
+  .heroSwiper {
+    width: 100%;
+    height: 700px;
+    position: relative;
+  }
+
+  .heroSwiper .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  .heroSwiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* pagination */
+  .heroSwiper .swiper-pagination {
+    bottom: 28px !important;
+  }
+
+  .heroSwiper .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background: rgba(255,255,255,0.7);
+    opacity: 1;
+    margin: 0 8px !important;
+    border: 2px solid #666;
+    transition: all 0.3s ease;
+  }
+
+  .heroSwiper .swiper-pagination-bullet-active {
+    width: 42px;
+    border-radius: 30px;
+    background: #ffffff;
+    border-color: #111;
+  }
+
+  /* 반응형 */
+  @media (max-width: 1024px) {
+    .heroSwiper {
+      height: 520px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .heroSwiper {
+      height: 420px;
+    }
+
+    .heroSwiper .swiper-slide img {
+      object-fit: contain;
+      background: #f4f4f4;
+    }
+  }
+</style>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bootstrap Auto Property Slider</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+ 
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <style>
+    body{
+      background:#f4f4f4;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    .hero-wrap{
+      padding:60px 0;
+    }
+
+    .main-swiper{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      background:#fff;
+      min-height:620px;
+    }
+
+    .carousel-item{
+      padding:60px;
+    }
+
+    .left-content{
+      padding-right:30px;
+    }
+
+    .main-title{
+      font-size:56px;
+      font-weight:900;
+      line-height:1.2;
+      color:#ff66b2;
+      margin-bottom:24px;
+    }
+
+    .main-desc{
+      font-size:20px;
+      color:#444;
+      margin-bottom:40px;
+    }
+
+    .btn-custom{
+      background:#2e8b57;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:12px;
+      font-weight:700;
+      border:none;
+    }
+
+    .right-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .mini-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      height:230px;
+      color:#fff;
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:end;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .mini-card::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.25);
+    }
+
+    .mini-card *{
+      position:relative;
+      z-index:2;
+    }
+
+    .mini-title{
+      font-size:28px;
+      font-weight:800;
+      line-height:1.3;
+    }
+
+    .mini-tag{
+      display:inline-block;
+      margin-top:12px;
+      background:rgba(255,255,255,0.2);
+      backdrop-filter:blur(4px);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:14px;
+    }
+
+    /* 양쪽 체인지 버튼 */
+    .carousel-control-prev,
+    .carousel-control-next{
+      width:70px;
+      opacity:1;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon{
+      display:none;
+    }
+
+    .nav-btn{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+      font-size:24px;
+      color:#222;
+      transition:0.3s;
+    }
+
+    .nav-btn:hover{
+      transform:scale(1.08);
+      background:#111;
+      color:#fff;
+    }
+
+    /* indicator */
+    .carousel-indicators{
+      bottom:18px;
+    }
+
+    .carousel-indicators [data-bs-target]{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      border:none;
+      background:#bbb;
+    }
+
+    .carousel-indicators .active{
+      background:#111;
+      width:32px;
+      border-radius:999px;
+    }
+
+    @media(max-width:991px){
+
+      .carousel-item{
+        padding:40px 24px 80px;
+      }
+
+      .main-title{
+        font-size:40px;
+      }
+
+      .right-grid{
+        margin-top:30px;
+      }
+
+      .mini-card{
+        height:180px;
+      }
+    }
+
+    @media(max-width:767px){
+
+      .main-title{
+        font-size:32px;
+      }
+
+      .right-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container hero-wrap">
+
+  <!-- Swiper / Carousel -->
+  <div
+    id="mainVisual"
+    class="carousel slide main-swiper"
+    data-bs-ride="carousel"
+    data-bs-interval="3000"
+  >
+
+    <!-- Indicator -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainVisual" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#mainVisual" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#mainVisual" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row align-items-center">
+
+          <div class="col-lg-6 left-content">
+            <h1 class="main-title">
+              당신의 아름다움이<br/>
+              피어나는 시간
+            </h1>
+
+            <p class="main-desc">
+              일본 드럭스토어의 대란템부터 프리미엄 뷰티 아이템까지
+              엄선했습니다.
+            </p>
+
+            <button class="btn-custom">
+              보러가기
+            </button>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="right-grid">
+
+              <div
+                class="mini-card"
+                style="background-image:url('https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=1200');"
+              >
+                <div class="mini-title">
+                  뷰티 & 화장품
+                </div>
+                <div class="mini-tag">
+                  KOLEX Bloom
+                </div>
+              </div>
+
+              <div
+                class="mini-card"
+                style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200');"
+              >
+                <div class="mini-title">
+                  일본 명품 오디오
+                </div>
+                <div class="mini-tag">
+                  Sony / Audio
+                </div>
+              </div>
+
+              <div
+                class="mini-card"
+                style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200');"
+              >
+                <div class="mini-title">
+                  감성 캠핑 브랜드
+                </div>
+                <div class="mini-tag">
+                  Snow Peak
+                </div>
+              </div>
+
+              <div
+                class="mini-card"
+                style="background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200');"
+              >
+                <div class="mini-title">
+                  애니메이션 굿즈
+                </div>
+                <div class="mini-tag">
+                  일본 한정판
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row align-items-center">
+
+          <div class="col-lg-6 left-content">
+            <h1 class="main-title" style="color:#222;">
+              센다이 타나바타<br/>
+              마츠리
+            </h1>
+
+            <p class="main-desc">
+              매년 8월 6~8일 개최되는 일본 대표 여름 축제
+            </p>
+
+            <button class="btn-custom">
+              축제 보러가기
+            </button>
+          </div>
+
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1400"
+              class="img-fluid rounded-4"
+              alt=""
+            />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="row align-items-center">
+
+          <div class="col-lg-6 left-content">
+            <h1 class="main-title" style="color:#ff5722;">
+              스미다가와<br/>
+              불꽃놀이 축제
+            </h1>
+
+            <p class="main-desc">
+              도쿄 여름 밤하늘을 수놓는 대표 불꽃축제
+            </p>
+
+            <button class="btn-custom">
+              자세히 보기
+            </button>
+          </div>
+
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1533158326339-7f3cf2404354?q=80&w=1400"
+              class="img-fluid rounded-4"
+              alt=""
+            />
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Left Button -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#mainVisual"
+      data-bs-slide="prev"
+    >
+      <div class="nav-btn">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+    </button>
+
+    <!-- Right Button -->
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#mainVisual"
+      data-bs-slide="next"
+    >
+      <div class="nav-btn">
+        <i class="bi bi-chevron-right"></i>
+      </div>
+    </button>
+
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

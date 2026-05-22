@@ -1,0 +1,170 @@
+/* 기본 설정 및 브랜드 컬러 변수 정의 */
+:root {
+    --brand-purple: #92277F;   /* 상단 바 및 메인 포인트 딥 퍼플 */
+    --pastel-bg: #9BB2C9;      /* 푸터 메인 파스텔 블루 그레이 */
+    --pastel-bottom: #7B8CC4;  /* 푸터 최하단 카피라이트 바 */
+    --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-pretendard);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER STYLE ================= */
+
+/* 1. 3초 간격 왼쪽 -> 오른쪽 무한 롤링 탑 배너 */
+.top-banner {
+    background-color: var(--brand-purple);
+    height: 34px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-ticker {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    animation: tickerVertical 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.ticker-item {
+    height: 34px;
+    line-height: 34px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+}
+
+/* 3개 배너가 위로 넘어가며 순환하는 애니메이션 Keyframes */
+@keyframes tickerVertical {
+    0%, 28% { transform: translateY(0); }
+    33%, 61% { transform: translateY(-34px); }
+    66%, 95% { transform: translateY(-68px); }
+    100% { transform: translateY(0); }
+}
+
+/* 2. 로고 영역 - 3D 뒤집기 호버 및 탭 연동 애니메이션 */
+.header-logo-zone {
+    perspective: 1000px;
+}
+
+.logo-wrapper {
+    position: relative;
+    width: 140px;
+    height: 55px;
+    display: block;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* US 탭을 누르거나 호버했을 때 뒤집히며 다른 로고 노출 */
+.logo-wrapper:hover, 
+.logo-wrapper.flipped {
+    transform: rotateY(180deg);
+}
+
+.main-logo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+}
+
+.logo-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.logo-back {
+    transform: rotateY(180deg);
+}
+
+.logo-subtext {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+/* 3. 검색창 디자인 */
+.search-form input {
+    border: 2px solid var(--brand-purple);
+    font-size: 14px;
+    height: 42px;
+}
+.search-form input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(146, 39, 127, 0.15);
+    border-color: var(--brand-purple);
+}
+.text-purple {
+    color: var(--brand-purple);
+}
+
+/* 4. US/JP 국가 셀렉트 토글 버튼 */
+#countrySelect {
+    background-color: var(--brand-purple);
+    font-weight: bold;
+    padding: 6px 12px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* 5. 네비게이션 메인 메뉴 */
+.navbar-nav .nav-link {
+    color: #444;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #f8f9fa;
+    color: var(--brand-purple);
+}
+
+
+/* ================= FOOTER STYLE ================= */
+.footer-zone {
+    background-color: var(--pastel-bg);
+}
+
+.border-end-md {
+    @media (min-width: 768px) {
+        border-right: 1px solid rgba(0,0,0,0.1);
+    }
+}
+
+/* 환율 박스 */
+.exchange-box {
+    width: 110px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 하단 퀵 링크 아이콘 */
+.footer-quick-icons a {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+    width: 75px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.footer-quick-icons a:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 하단 최종 정보 처리 영역 */
+.footer-bottom {
+    background-color: var(--pastel-bottom);
+    font-size: 13px;
+}
+
+.sns-icons a {
+    transition: opacity 0.2s;
+}
+.sns-icons a:hover {
+    opacity: 0.7;
+}

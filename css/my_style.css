@@ -1,0 +1,1453 @@
+/* =========================
+RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Pretendard', sans-serif;
+    background:#f3f1f1;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.kolex-header{
+    width:100%;
+    background:#ffffff;
+}
+
+/* 종이tap nav 색 변동 */
+
+#main_body{background: #eaeaea;}
+.gnb_back{ height: 130px;width: 100%;position: absolute;left: 0;top: 30px;background-color:white;z-index: 10; border-bottom:1px solid #000;}
+#hd {min-height:30px; border-bottom:1px solid #4c4c4c; padding-bottom:18px; background:url('/ys/img/bg_topSet.jpg') repeat-x top; background-color:#fff; margin-bottom:40px; position:relative;}
+#hd a{ text-decoration:none;}
+#hd_wrapper {width:1255px;margin:0 auto;position: relative;z-index: 1000;}
+#hd_wrapper .topSet { overflow:hidden; }
+#hd_wrapper .topSet .topLink { overflow:hidden; }
+#hd_wrapper .topSet .topLink li { width:245px; float:left; background: #333;}
+#hd_wrapper .topSet .topLink li a { height:30px; line-height:30px; display:block; font-size:13px; color:#b6b6b6; text-align:center; letter-spacing:-1px; border-left:1px solid #222222; }
+#hd_wrapper .topSet .topLink li.on a { color:#b3a26a; background-color:#000000; }
+#hd_wrapper .topSet .topLink li.link_2.on a, #hd_wrapper .topSet .topLink li.link_2 a:hover{ background:#387167; color:#fff;}
+#hd_wrapper .topSet .topLink li.link_3.on a, #hd_wrapper .topSet .topLink li.link_3 a:hover{ background:#ffc223;color:#fff;}
+#hd_wrapper .topSet .topLink li.link_4.on a, #hd_wrapper .topSet .topLink li.link_4 a:hover{ background:#f1625d; color:#fff;}
+#hd_wrapper .topSet .topLink li.link_5.on a, #hd_wrapper .topSet .topLink li.link_5 a:hover{ background:#004b8d; color:#fff;}
+
+/* 종이 tap nab 끝 */
+
+
+
+
+/* 히어로 section 시작 */
+
+/* Pretendard font 등 기본 폰트 적용 기준 */
+
+
+.hero-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.hero-swiper {
+  width: 100%;
+  height: auto;
+  /* 배너 이미지들의 원본 비율을 고려한 최대 높이 설정 (필요에 따라 조절) */
+  max-height: 480px; 
+}
+
+.hero-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-swiper .slide-img-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-swiper .slide-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비율을 유지하며 영역을 채움 */
+  display: block;
+}
+
+/* 하단 불(페이지네이션) 커스텀 스타일링 */
+.hero-swiper .swiper-pagination-bullet {
+  width: 50px;
+  height: 50px;
+  background: #ccc;
+  opacity: 1;
+  margin: 0 6px !important;
+  transition: all 0.3s ease;
+}
+
+/* 활성화된 현재 슬라이드의 불빛 스타일 */
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #a374db; /* 브랜드 아이덴티티에 맞춘 파스텔 퍼플 톤 예시 */
+  width: 24px;         /* 활성화되었을 때 가로로 살짝 길어지는 트렌디한 효과 */
+  border-radius: 5px;
+}
+
+/* 히어로 secton 끝 */
+
+
+
+/* 작은 아이템 시작 */
+/* Pretendard 폰트가 적용되어 있다고 가정합니다. */
+.banner-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* 사이트 레이아웃에 맞춰 조절 가능 */
+  margin: 0 auto;
+  background-image: url('Fr_flex_bot_fr.png'); /* 업로드하신 배경 이미지 경로 */
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 개별 아이템 (탭 영역) */
+.banner-item {
+  flex: 1; /* 5개 아이템이 정확히 1:1:1:1:1 비율로 분할 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
+  text-decoration: none; /* 링크 기본 밑줄 제거 */
+  border-right: 1px solid rgba(255, 255, 255, 0.4); /* 이미지 내부의 흰색 세로선 */
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+  min-height: 120px; /* 이미지 비율에 맞춰 높이 지정 */
+}
+
+/* 마지막 아이템은 오른쪽 테두리 제거 */
+.banner-item:last-child {
+  border-right: none;
+}
+
+/* 마우스 호버 및 탭 시 시각적 피드백 */
+.banner-item:hover, 
+.banner-item:active {
+  background-color: rgba(255, 255, 255, 0.1); /* 살짝 밝아지는 효과 */
+}
+
+/* 텍스트 세부 스타일링 */
+.item-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.item-highlight {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.item-desc {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* 이미지에 맞춘 텍스트 컬러 매칭 */
+.text-white { color: #ffffff; }
+.text-green { color: #76ff03; }  /* 형광 연두 톤 */
+.text-orange { color: #ff6e40; } /* 주황/다홍 톤 */
+.text-pink { color: #ff4081; }   /* 핑크 톤 */
+
+/* 모바일 반응형 대응: 화면이 좁아지면 가로 스크롤 혹은 세로 배치로 변경 가능 */
+@media (max-width: 768px) {
+  .banner-container {
+    overflow-x: auto; /* 모바일에서 깨지지 않고 옆으로 넘겨볼 수 있도록 설정 */
+    white-space: nowrap;
+  }
+  .banner-item {
+    min-width: 140px; /* 최소 너비를 확보하여 가로 스크롤 유도 */
+    flex-shrink: 0;
+  }
+}
+
+/* 작은 아이템 끝 */
+
+
+/* 트랜드 섹션 시작 */
+/* 부드러운 스크롤 이동을 위한 글로벌 설정 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Pretendard 폰트 패밀리 기본 적용 기준 */
+#trend-section {
+  background-color: #ffffff;
+  /* 상단 네비게이션 바 높이만큼 스크롤 위치 맞추기 유격 */
+  scroll-margin-top: 60px; 
+}
+
+/* 왼쪽 타이틀 영역 배경 일러스트 커스텀 */
+.trend-left-content {
+  /* 업로드하신 이미지의 왼쪽 화려한 그래피티 느낌을 배경으로 깔고 싶을 때 사용 */
+  background-image: url('fr_trend_section.jpg');
+  background-size: 200% auto; /* 왼쪽 구역만 보이도록 스케일 조정 예시 */
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+/* 브랜드 네임 텍스트 컬러 (kolex 시그니처 컬러가 있다면 매칭) */
+.brand-name {
+  color: #a374db; /* 파스텔 퍼플 예시 */
+  font-weight: 800;
+}
+
+/* 오른쪽 카드 링크 영역 */
+.trend-card-link {
+  display: block;
+  width: 100%;
+  max-width: 420px; /* 카드 최대 너비 제한 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trend-card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* 마우스 호버(탭) 효과: 카드가 살짝 떠오름 */
+.trend-card-link:hover .trend-card {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* Japan Now 뱃지 스타일 */
+.badge-japan-now {
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* 내부 텍스트 라인 간격 조정 */
+.card-main-title {
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* 트랜드 섹션 끝 */
+
+/* why 섹션 시작 */
+/* Pretendard 폰트 시스템 기준 */
+.why-kolex-section {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #ffffff;
+}
+
+/* 상단 뱃지 */
+.badge-trust {
+  background-color: #8a1962; /* 이미지 내부의 진한 시그니처 딥퍼플/자주색 */
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  color: #111111;
+}
+
+/* 그리드 높이 동기화 */
+@media (min-width: 992px) {
+  .spec-grid-container {
+    min-height: 520px;
+  }
+}
+
+/* 1. 왼쪽 메인 카드 */
+.feature-card-main {
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
+
+.card-overlay {
+  background: linear-gradient(to top, rgba(0, 40, 80, 0.85) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.text-light-purple {
+  color: #d1b6ff;
+}
+
+.btn-text-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
+  transition: all 0.2s ease;
+}
+.btn-text-link:hover {
+  color: #d1b6ff;
+  border-bottom-color: #d1b6ff;
+}
+
+/* 2. 오른쪽 라인 카드 공통 */
+.feature-card-sub {
+  border: 2px solid #8a1962; /* 보라색 라인 매칭 */
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card-sub:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(138, 25, 98, 0.08);
+}
+
+.card-sub-title {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #8a1962;
+}
+
+.card-sub-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #666666 !important;
+}
+
+.btn-arrow-link {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8a1962;
+}
+
+/* 3. 오른쪽 하단 풀 컬러 카드 */
+.feature-card-purple {
+  background-color: #8a1962;
+  color: #ffffff;
+}
+
+.btn-outline-white {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 14px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.btn-outline-white:hover {
+  background-color: #ffffff;
+  color: #8a1962;
+}
+
+.btn-text-link-white {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+}
+.btn-text-link-white:hover {
+  text-decoration: underline;
+}
+
+/* why 섹션 끝 */
+
+/* 피드백 섹션 시작 */
+/* 기본 폰트 패밀리 세팅 */
+.review-section {
+  font-family: 'Pretendard', sans-serif;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 1. 배경 어둡게 처리하는 딤드 오버레이 (글씨가 선명하게 보이도록 유도) */
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45); /* 이미지 원본 밝기에 따라 투명도 조절 가능 */
+  z-index: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+/* 2. 반투명 유리창 효과(Glassmorphism)를 준 백그라운드 리뷰 카드 디자인 */
+.review-card {
+  background: rgba(255, 255, 255, 0.85); /* 흰색 투명도 반영 */
+  backdrop-filter: blur(8px); /* 뒷배경 흐림 필터링 */
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  min-height: 180px;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* 별점 컬러 - 시그니처 딥 퍼플 색상 반영 */
+.star-rating .bi-star-fill {
+  color: #8a1962; 
+  font-size: 16px;
+  margin-right: 2px;
+}
+
+/* 리뷰 인용 카피 스타일 */
+.review-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  word-break: keep-all;
+}
+
+/* 프로필 아바타 라운딩 원형 처리 */
+.profile-avatar-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 작성자 정보 텍스트 정렬 */
+.reviewer-info {
+  font-size: 13.5px;
+}
+
+/* 3. 내비게이션 좌우 화살표 디자인 */
+.btn-nav-arrow {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 32px; /* 화살표 크기 */
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-nav-arrow:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.btn-nav-arrow:active {
+  transform: scale(0.95);
+}
+
+/* 모바일/태블릿 반응형 예외 유격 처리 */
+@media (max-width: 576px) {
+  .review-text {
+    font-size: 14px;
+  }
+  .btn-nav-arrow {
+    font-size: 26px;
+  }
+}
+
+/* 피드백 섹션 끝 */
+
+/* 트랜드 섹션__2 시작  */
+
+  <style>
+    body{
+      background:#f4f4f4;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    .hero-wrap{
+      padding:60px 0;
+    }
+
+    .main-swiper{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      background:#fff;
+      min-height:620px;
+    }
+
+    .carousel-item{
+      padding:60px;
+    }
+
+    .left-content{
+      padding-right:30px;
+    }
+
+    .main-title{
+      font-size:56px;
+      font-weight:900;
+      line-height:1.2;
+      color:#ff66b2;
+      margin-bottom:24px;
+    }
+
+    .main-desc{
+      font-size:20px;
+      color:#444;
+      margin-bottom:40px;
+    }
+
+    .btn-custom{
+      background:#2e8b57;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:12px;
+      font-weight:700;
+      border:none;
+    }
+
+    .right-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .mini-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      height:230px;
+      color:#fff;
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:end;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .mini-card::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.25);
+    }
+
+    .mini-card *{
+      position:relative;
+      z-index:2;
+    }
+
+    .mini-title{
+      font-size:28px;
+      font-weight:800;
+      line-height:1.3;
+    }
+
+    .mini-tag{
+      display:inline-block;
+      margin-top:12px;
+      background:rgba(255,255,255,0.2);
+      backdrop-filter:blur(4px);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:14px;
+    }
+
+    /* 양쪽 체인지 버튼 */
+    .carousel-control-prev,
+    .carousel-control-next{
+      width:70px;
+      opacity:1;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon{
+      display:none;
+    }
+
+    .nav-btn{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+      font-size:24px;
+      color:#222;
+      transition:0.3s;
+    }
+
+    .nav-btn:hover{
+      transform:scale(1.08);
+      background:#111;
+      color:#fff;
+    }
+
+    /* indicator */
+    .carousel-indicators{
+      bottom:18px;
+    }
+
+    .carousel-indicators [data-bs-target]{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      border:none;
+      background:#bbb;
+    }
+
+    .carousel-indicators .active{
+      background:#111;
+      width:32px;
+      border-radius:999px;
+    }
+
+    @media(max-width:991px){
+
+      .carousel-item{
+        padding:40px 24px 80px;
+      }
+
+      .main-title{
+        font-size:40px;
+      }
+
+      .right-grid{
+        margin-top:30px;
+      }
+
+      .mini-card{
+        height:180px;
+      }
+    }
+
+    @media(max-width:767px){
+
+      .main-title{
+        font-size:32px;
+      }
+
+      .right-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+
+  /* 트랜드 섹션__2 끝 */
+
+/* 유뷰브 섹션 시작 */
+/* 기본 폰트 패밀리 세팅 */
+.youtube-section {
+  font-family: 'Pretendard', sans-serif;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+  color: #111111;
+}
+
+/* 비디오 반응형 래퍼 박스 */
+.youtube-video-wrapper {
+  aspect-ratio: 16 / 9; /* 와이드 스크린 고정 비율 설정 */
+  cursor: pointer;
+  background-color: #000;
+}
+
+/* 썸네일 이미지 기본 상태 */
+.video-thumbnail {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* 은은한 어두운 필터를 주어 재생버튼을 강조하는 오버레이 */
+.video-overlay {
+  background: rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+/* 유튜브 커스텀 SVG 버튼 크기 및 제어 */
+.play-btn-box {
+  width: 76px;
+  height: 54px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.youtube-play-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 기본 유튜브 버튼의 투명도 조절 */
+.youtube-play-svg .bg {
+  fill: #ff0000;
+  opacity: 0.9;
+  transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+/* 🔥 마우스 호버(Hover) 또는 모바일 탭 인터랙션 효과 */
+.youtube-video-wrapper:hover .video-thumbnail {
+  transform: scale(1.03); /* 이미지가 부드럽게 약간 확대됨 */
+}
+
+.youtube-video-wrapper:hover .video-overlay {
+  background: rgba(0, 0, 0, 0.25); /* 오버레이가 살짝 더 어두워짐 */
+}
+
+.youtube-video-wrapper:hover .play-btn-box {
+  transform: scale(1.12); /* 재생 버튼이 통통 튀듯 커짐 */
+}
+
+.youtube-video-wrapper:hover .youtube-play-svg .bg {
+  fill: #cc0000; /* 조금 더 짙은 유튜브 시그니처 레드로 변경 */
+  opacity: 1;
+}
+
+/* 모바일 화면 대응을 위한 유격 조절 */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .play-btn-box {
+    width: 60px;
+    height: 42px;
+  }
+}
+
+/* 유튜브 섹션 끝 */
+
+/* 프로세스 시작  */
+
+.process-section {
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 상단 탭 기본 커스텀 */
+.process-tabs {
+  border-bottom: none;
+}
+.process-tabs .nav-item {
+  flex: 1;
+}
+.process-tabs .nav-link {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+  background-color: #d1d5db;
+  border: none;
+  border-radius: 0;
+  transition: background 0.3s ease;
+}
+.process-tabs .nav-link.active {
+  background-color: #2b6cb0;
+  color: #ffffff !important;
+}
+
+/* 타임라인 레이아웃 기둥 */
+.timeline-container {
+  position: relative;
+  padding: 20px 0;
+}
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #e2e8f0;
+  transform: translateX(-50%);
+}
+
+/* 개별 프로세스 아이템 */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* 뱃지 인프라 컬러 */
+.bg-green-sub  { background-color: #a7f3d0; color: #065f46; }
+.bg-blue-sub   { background-color: #bfdbfe; color: #1e3a8a; }
+.bg-purple-sub { background-color: #c7d2fe; color: #3730a3; }
+.bg-red-sub    { background-color: #fca5a5; color: #7f1d1d; }
+
+.timeline-content {
+  width: 44%;
+  background-color: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.timeline-content h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.timeline-content p { font-size: 13px; color: #718096; margin-bottom: 0; }
+
+.left-item { justify-content: flex-start; }
+.left-item .timeline-content { text-align: right; }
+
+.right-item { justify-content: flex-end; }
+.right-item .timeline-content { text-align: left; }
+
+/* ==========================================================================
+   🔥 모여들기 모션 트랜지션 정의
+   ========================================================================== */
+
+/* 1. 초기 대기 상태 (양쪽 멀리 떨어져서 숨겨짐) */
+.left-item.js-animate .timeline-content {
+  opacity: 0;
+  transform: translateX(-60px); /* 왼쪽에서 대기 */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
+.right-item.js-animate .timeline-content {
+  opacity: 0;
+  transform: translateX(60px); /* 오른쪽에서 대기 */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
+/* 중앙 아이콘도 은은하게 팝업 */
+.js-animate .timeline-icon {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.6);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+}
+
+/* 2. 모션 활성화 상태 (중앙 정위치로 밀고 들어옴) */
+.left-item.js-animate.motion-active .timeline-content,
+.right-item.js-animate.motion-active .timeline-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.js-animate.motion-active .timeline-icon {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* 모바일 뷰 최적화 무력화 */
+@media (max-width: 768px) {
+  .timeline-container::before { left: 30px; }
+  .timeline-icon { left: 30px; }
+  .timeline-item { justify-content: flex-end; }
+  .timeline-content { width: calc(100% - 60px); text-align: left !important; }
+  .left-item.js-animate .timeline-content { transform: translateX(40px); }
+}
+
+/* 프로세스 끝 __1 */
+
+
+
+
+/* TOP NOTICE */
+
+.top-banner{
+    width:100%;
+    height:50px;
+    background:#a0006f;
+    overflow:hidden;
+    position:relative;
+}
+
+.notice-slider{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+.notice-track{
+    display:flex;
+    width:300%;
+    height:100%;
+    animation:slideNotice 9s infinite;
+}
+
+.notice-item{
+    width:100%;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
+}
+
+@keyframes slideNotice{
+
+    0%{
+        transform:translateX(0%);
+    }
+
+    30%{
+        transform:translateX(0%);
+    }
+
+    33%{
+        transform:translateX(-100%);
+    }
+
+    63%{
+        transform:translateX(-100%);
+    }
+
+    66%{
+        transform:translateX(-200%);
+    }
+
+    96%{
+        transform:translateX(-200%);
+    }
+
+    100%{
+        transform:translateX(0%);
+    }
+
+}
+
+/* MAIN */
+
+.main-header{
+    height:190px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 60px;
+}
+
+/* LOGO */
+
+.logo-section{
+    width:250px;
+}
+
+.logo-wrap{
+    width:180px;
+    height:70px;
+    position:relative;
+}
+
+.logo-img{
+    position:absolute;
+    width:180px;
+    left:0;
+    top:0;
+    opacity:0;
+}
+
+.logo-jp{
+    animation:logoJP 6s infinite;
+}
+
+.logo-us{
+    animation:logoUS 6s infinite;
+}
+
+@keyframes logoJP{
+
+    0%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    45%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0;
+        transform:scale(0.9);
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+@keyframes logoUS{
+
+    0%{
+        opacity:0;
+        transform:scale(1.1);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    95%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+/* SEARCH */
+
+.search-section{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.search-box{
+    width:520px;
+    height:62px;
+    border:3px solid #b40083;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    padding:0 25px;
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    background:none;
+    color:#fff;
+    outline:none;
+    font-size:18px;
+}
+
+.search-box input::placeholder{
+    color:#777;
+}
+
+.search-box button{
+    border:none;
+    background:none;
+    color:#c3008d;
+    font-size:28px;
+}
+
+/* RIGHT */
+
+.right-section{
+    width:260px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:20px;
+}
+
+.user-btn{
+    width:55px;
+    height:55px;
+    background:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+/* COUNTRY TAB */
+
+.country-tab{
+    display:flex;
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.country-btn{
+    width:60px;
+    display: none;
+ 
+   
+    border:none;
+    background:#c277ae;
+    color:#fff;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.country-btn.active{
+    background:#ff3bb3;
+    display: block;
+}
+
+.country-btn:hover{
+    background:#34eb98;
+}
+
+/* SNS */
+
+.social-login img{
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+   
+   
+}
+
+/* CATEGORY */
+
+.category-nav{
+    background:#bdbdbd;
+    height:70px;
+}
+
+.category-menu{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    height:70px;
+    margin:0;
+    padding:0;
+}
+
+.category-menu li{
+    flex:1;
+}
+
+.category-menu li a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    height:70px;
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.category-menu li.active{
+    background:#808080;
+}
+
+.category-menu li:hover{
+    background:#8c8c8c;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.kolex-footer{
+    background:#245b88;
+    color:#fff;
+}
+
+/* TOP */
+
+.footer-top{
+    padding:70px 0 50px;
+}
+
+.footer-title{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:25px;
+    position:relative;
+}
+
+.footer-title::after{
+    content:'';
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,0.2);
+    position:absolute;
+    left:0;
+    bottom:-10px;
+}
+
+.footer-list{
+    list-style:none;
+    padding:0;
+}
+
+.footer-list li{
+    margin-bottom:14px;
+}
+
+.footer-list li a{
+    color:rgba(255,255,255,0.7);
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.footer-list li a:hover{
+    color:#fff;
+    padding-left:5px;
+}
+
+/* EXCHANGE */
+
+.exchange-wrap{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.exchange-card{
+    width:130px;
+    height:110px;
+    background:#dfe5ea;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-radius:4px;
+}
+
+.exchange-card img{
+    width:40px;
+}
+
+.exchange-card span{
+    color:#333;
+    margin-top:10px;
+    font-weight:600;
+}
+
+/* NEWSLETTER */
+
+.newsletter-desc{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.newsletter-form{
+    display:flex;
+    gap:15px;
+}
+
+.newsletter-input{
+    flex:1;
+    height:58px;
+    border:1px solid rgba(255,255,255,0.3);
+    background:transparent;
+    padding:0 20px;
+    color:#fff;
+}
+
+.newsletter-input:focus{
+    outline:none;
+    border-color:#fff;
+}
+
+.newsletter-input::placeholder{
+    color:rgba(255,255,255,0.5);
+}
+
+.newsletter-btn{
+    width:120px;
+    border:none;
+    background:#111;
+    color:#fff;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.newsletter-btn:hover{
+    background:#000;
+}
+
+.newsletter-info{
+    margin-top:15px;
+    font-size:13px;
+    color:rgba(255,255,255,0.7);
+}
+
+/* QUICK */
+
+.footer-quick{
+    padding-bottom:50px;
+}
+
+.quick-menu{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:1px;
+    background:rgba(255,255,255,0.2);
+}
+
+.quick-item{
+    background:#efefef;
+    height:110px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.quick-item:hover{
+    background:#fff;
+    transform:translateY(-3px);
+}
+
+.quick-item i{
+    font-size:30px;
+    color:#999;
+    margin-bottom:10px;
+}
+
+.quick-item span{
+    color:#555;
+    font-weight:600;
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+    background:#8d93d4;
+    padding:28px 0;
+}
+
+.bottom-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.copy{
+    color:#000;
+    font-size:16px;
+}
+
+.footer-links{
+    display:flex;
+    gap:30px;
+}
+
+.footer-links a{
+    color:#000;
+    text-decoration:none;
+}
+
+.sns-list{
+    display:flex;
+    gap:18px;
+}
+
+.sns-list a{
+    color:#000;
+    font-size:30px;
+    transition:0.3s;
+}
+
+.sns-list a:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:991px){
+
+    .main-header{
+        flex-direction:column;
+        height:auto;
+        padding:30px 20px;
+        gap:25px;
+    }
+
+    .right-section{
+        width:100%;
+        justify-content:center;
+    }
+
+    .category-menu{
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    .category-menu li{
+        min-width:180px;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+    }
+
+    .newsletter-btn{
+        width:100%;
+        height:58px;
+    }
+
+    .quick-menu{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .quick-menu{
+        grid-template-columns:1fr;
+    }
+
+    .exchange-wrap{
+        flex-direction:column;
+    }
+
+    .bottom-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}

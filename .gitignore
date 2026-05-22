@@ -1,0 +1,142 @@
+
+
+
+# --------------------------------------------------------------------
+# 1. 환경 변수 및 핵심 보안 파일 (가장 중요!)
+# --------------------------------------------------------------------
+# API Keys, DB 접속 정보, 환율/크롤링 세션 등 민감 정보 보호
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.env.*
+config.json
+credentials.json
+*.pem
+*.key
+*.pfx
+*.cer
+
+# --------------------------------------------------------------------
+# 2. 운영체제 및 시스템 생성 파일
+# --------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --------------------------------------------------------------------
+# 3. 개발 도구 및 IDE (Editor) 설정 파일
+# --------------------------------------------------------------------
+# VS Code
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ / WebStorm / PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text / Eclipse
+*.sublime-project
+*.sublime-workspace
+.metadata/
+.classpath
+.project
+.settings/
+
+# --------------------------------------------------------------------
+# 4. 패키지 매니저 및 의존성 디렉토리 (의존성은 항상 제외)
+# --------------------------------------------------------------------
+# Node.js
+node_modules/
+jspm_packages/
+.pnpm-store/
+
+# Python (크롤링/스크래핑용 데이터 분석 환경 등)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+
+# PHP (Composer)
+vendor/
+
+# Java / Build Tools
+target/
+build/
+.gradle/
+out/
+
+# --------------------------------------------------------------------
+# 5. 구매대행/유통 업무 특화 데이터 및 로그 (Data & Logs)
+# --------------------------------------------------------------------
+# 상품 이미지, 배너 디자인 원본, 상세페이지 에셋 등 대용량 파일
+*.psd
+*.ai
+*.xd
+*.fig
+*.figma
+downloads/
+uploads/
+images/products/
+assets/raw/
+
+# 일본 옥션, 야후, 아마존, 미국 이베이 등 크롤링/스크래핑 임시 데이터
+# 엑셀 정산, 운송장 대량 업로드용 파일 데이터 보호
+*.csv
+*.xlsx
+*.xls
+*.tsv
+data/raw/
+data/processed/
+scraped_data/
+crawling_cache/
+html_dumps/
+
+# 로그 및 캐시 (환율 동기화 로그, API 요청/응답 로그 등)
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.cache/
+
+# --------------------------------------------------------------------
+# 6. 프론트엔드 빌드 및 배포 산출물
+# --------------------------------------------------------------------
+dist/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+
+# --------------------------------------------------------------------
+# 7. 기타 (도커 및 컴파일러)
+# --------------------------------------------------------------------
+.docker/
+Docker-compose.override.yml
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+
+상단.png
+푸터.png
