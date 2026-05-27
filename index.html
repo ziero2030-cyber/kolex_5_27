@@ -5,16 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5월27일 제출</title>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard-std@1.3.9/dist/web/static/pretendard-std.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard-std@1.3.9/dist/web/static/pretendard-std.min.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <link   rel="stylesheet"   href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+  
 
 
-    <link rel="stylesheet" href="./css/my_style.css">
+    <link rel="stylesheet" href="./css/my_style.css"> 
+
+      <style>
+
+    .top-banner{
+      position:relative;
+      width:100%;
+      min-height:100px;
+      /* height:100% */
+     
+
+      background-image:url('./img/img_bg/hero_bt.jpg');
+      background-position:center;
+      background-repeat:no-repeat;
+      background-size:cover;
+     /* background:#21469c; */
+      /* background img:url("banner-bg.jpg") center center no-repeat; */
+      /* background-size:cover; */
+       /* overflow:hidden; */
+  
+    }s
+
+    .top-banner img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .menu-wrap{
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translateX(-50%);
+      width:100%;
+      max-width:1100px;
+      height:100%;
+      display:flex;
+      z-index:2;
+    }
+
+    .menu-item{
+      flex:1;
+      border-left:1px solid rgba(255,255,255,0.5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:10px;
+    }
+
+    .menu-item:last-child{
+      border-right:1px solid rgba(255,255,255,0.5);
+    }
+
+    .menu-box{
+      color:#fff;
+      line-height:1.7;
+    }
+
+    .menu-title{
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+
+    .menu-sub{
+      font-size:13px;
+      color:#d8f7ff;
+    }
+
+    .menu-highlight{
+      color:#ff6fa7;
+      font-weight:700;
+    }
+
+    @media (max-width:991px){
+
+      .menu-wrap{
+        position:relative;
+        transform:none;
+        left:0;
+        flex-wrap:wrap;
+        background:#21469c;
+      }
+
+      .menu-item{
+        flex:0 0 50%;
+        min-height:120px;
+        border-bottom:1px solid rgba(255,255,255,0.3);
+      }
+
+      .menu-item:nth-child(2n){
+        border-right:none;
+      }
+
+      .top-banner img{
+        min-height:220px;
+        object-fit:cover;
+      }
+    }
+
+    @media (max-width:576px){
+
+      .menu-item{
+        flex:0 0 100%;
+      }
+
+      .menu-title{
+        font-size:14px;
+      }
+
+      .menu-sub{
+        font-size:12px;
+      }
+    }
+
+
+/* section */
+
+
+
+  </style>
+
+
+
+
 
 </head>
 <body>
@@ -23,17 +149,14 @@
 KOLEX HEADER
 ========================= -->
 
-
-
-<header  class="kolex-header">
+<header class="kolex-header">
 
     <!-- TOP NOTICE -->
-     <div id="hd_wrapper">
-          <div class="top-banner">
+    <div class="top_slide_ad " >
 
         <div class="notice-slider swiper">
 
-            <div class="notice-track swiper-wrapper">
+            <div class="notice-track swiper-wrapper text-white text-center">
 
                 <div class="notice-item swiper-slide">
                     주말선착순 50% 할인
@@ -54,15 +177,15 @@ KOLEX HEADER
     </div>
 
     <!-- MAIN HEADER -->
-    <div class="main-header container-fluid">
+    <div class="main-header  ">
 
         <!-- LOGO -->
-        <div class="logo-section">
+        <div class="logo-section d-flex justify-content-center align-items-center py-3">
 
-            <div class="logo-wrap">
+            <div class="logo-wrap position-relative" style="width: 200px; height: 100px;">
 
-                <img src="./img/Logo__kolex/F_logo_100_56.svg" class="logo-img logo-jp" alt="Kolex JP">
-                <img src="logo-us.png" class="logo-img logo-us" alt="Kolex US">
+                <img src="./img/Logo__kolex/logo.png" class="logo-img logo-jp  active position-absolute top-0 start-0 w-100 h-100 object-fit-contain" alt="Kolex JP">
+                <!-- <img src="./img/Logo__kolex/logo_2.svg" class="logo-img logo-us  active position-absolute top-0 start-0 w-100 h-100 object-fit-contain" alt="Kolex US"> -->
 
             </div>
 
@@ -120,7 +243,7 @@ KOLEX HEADER
             <!-- SNS -->
             <div class="social-login d-flex gap-3">
 
-                <img src="https://images.icon-icons.com/2642/PNG/512/google_logo_g_logo_icon_159348.png" alt="google">
+                <img src="https://cdn-icons-png.flaticon.com/128/270/270014.png" class="border-circle" alt="google">
                 <img src="https://t1.kakaocdn.net/kakaocorp/kakaocorp/service/main2025/service_kakaoTalk.png" class="border-circle" alt="kakao">
 
             </div>
@@ -130,51 +253,51 @@ KOLEX HEADER
     </div>
 
     <!-- CATEGORY -->
-    <nav id="hd_wrapper">
+    <nav  id="hd_wrapper" class="category-nav gap-0">
 
-        <div class="topSet">
+        <div class="topSet ">
 
-            <ul class="topLink" style="height: auto;">
+            <ul class="category-menu topLink">
 
                 <li class="first on">
-                    <a href="/ys/bbs/board.php?bo_table=story&amp;wr_id=1" title="종이미술관 story" style="border-left-width: 0px;">
+                    <a href="/ys/bbs/board.php?bo_table=story&amp;wr_id=1">
                         <i class="bi bi-list"></i>
                         백화점화장품
                     </a>
                 </li>
 
                 <li class="link_2">
-                    <a href="/ys/bbs/board.php?bo_table=info_1&amp;wr_id=1" title="종이조형미술관">
+                    <a href="/ys/bbs/board.php?bo_table=info_1&amp;wr_id=1">
                         트렌드
                     </a>
                 </li>
 
-                <li class="link_3" >
-                    <a href="/ys/bbs/board.php?bo_table=child_view" title="어린이미술관">
+                <li class="link_3">
+                    <a href="/ys/bbs/board.php?bo_table=child_view">
                         EVENT
                     </a>
                 </li>
 
                 <li class="link_4">
-                    <a href="/ys/bbs/board.php?bo_table=facilities" title="주요시설">
+                    <a href="/ys/bbs/board.php?bo_table=facilities">
                         웰니스용품
                     </a>
                 </li>
 
                 <li class="link_5">
-                    <a href="/ys/bbs/board.php?bo_table=winner" title="수상작보기">
+                    <a href="/ys/bbs/board.php?bo_table=winner">
                         아웃도어제품
                     </a>
                 </li>
 
                 <li class="link_2">
-                    <a href="/ys/bbs/board.php?bo_table=winner" title="수상작보기">
+                    <a href="/ys/bbs/board.php?bo_table=info_1&amp;wr_id=1">
                         덕후IP굿즈
                     </a>
                 </li>
 
-                <li class="link_3" >
-                    <a href="/ys/bbs/board.php?bo_table=child_view" title="어린이미술관">
+                <li class="link_3">
+                    <a href="/ys/bbs/board.php?bo_table=child_view">
                         기획전
                     </a>
                 </li>
@@ -185,11 +308,11 @@ KOLEX HEADER
 
     </nav>
 
-     </div>
-
-  
-
 </header>
+
+
+
+
 
 
 
@@ -225,167 +348,465 @@ KOLEX HEADER
 
 <!-- 작은 아이템 시작 -->
 
-<div class="banner-container">
-  <a href="https://example.com/local-price" class="banner-item">
-    <div class="item-title text-white">일본현지가격 그대로</div>
-    <div class="item-highlight text-green">수수료 500엔~</div>
-    <div class="item-desc text-white">직구도 이제 가볍게</div>
-  </a>
 
-  <a href="https://example.com/payment" class="banner-item">
-    <div class="item-title text-orange">다양하고 편한 결제</div>
-    <div class="item-desc text-white">신용/체크카드</div>
-    <div class="item-desc text-white">간편결제/paypal</div>
-  </a>
+ <section class="top-banner">
 
-  <a href="https://example.com/customs" class="banner-item">
-    <div class="item-title text-orange">품목별</div>
-    <div class="item-desc text-white">통관규정</div>
-    <div class="item-desc text-white">금지물품 list</div>
-  </a>
+    <!-- 배경 이미지 -->
+    <!-- <img src="./img/img_bg/hero_bt.jpg" alt="banner"> -->
 
-  <a href="https://example.com/shipping" class="banner-item">
-    <div class="item-title text-pink">다양한</div>
-    <div class="item-desc text-white">배송선택으로</div>
-    <div class="item-title text-pink">이젠 고민끝</div>
-  </a>
+    <!-- 메뉴 -->
+    <div class="menu-wrap">
 
-  <a href="https://example.com/benefits" class="banner-item">
-    <div class="item-title text-orange">로그인즉시</div>
-    <div class="item-desc text-white">자동지급</div>
-    <div class="item-title text-orange">welcome 혜택</div>
-  </a>
-</div>
-
-<!-- 작은 아이템 끝 -->
-<!-- 트랜드 섹션 시작 -->
-
-<nav class="category-nav navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
-  <div class="container justify-content-center">
-    <ul class="navbar-nav gap-4">
-      <li class="nav-item"><a class="nav-link" href="#none">Cosmetics</a></li>
-      <li class="nav-item"><a class="nav-link" href="#none">Audio</a></li>
-      <li class="nav-item"><a class="nav-link fw-bold text-primary" href="#trend-section">Trend</a></li>
-      <li class="nav-item"><a class="nav-link" href="#none">Camping</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section id="trend-section" class="trend-section-wrap py-5">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      
-      <div class="col-md-6 trend-left-content position-relative">
-        <div class="text-content text-center text-md-start py-4">
-          <h4 class="fw-normal mb-3 text-secondary">남들보다 한발 빠르게,</h4>
-          <h2 class="fw-bold mb-4 text-dark lh-base">일본 SNS를 장악한 화제의<br>그 제품 이젠 <span class="brand-name">kolex</span>에서</h2>
+      <div class="menu-item">
+        <div class="menu-box">
+          <div class="menu-title">일본현지가격 그대로</div>
+          <div class="menu-sub">수수료 500원~</div>
+          <div class="menu-sub">직구도 이제 가볍게</div>
         </div>
       </div>
-      
-      <div class="col-md-6 d-flex justify-content-center">
-        <a href="https://example.com/fuji-rock-blog" class="trend-card-link text-decoration-none">
-          <div class="trend-card border shadow-sm bg-white overflow-hidden">
-            
-            <div class="card-img-box position-relative">
-              <img src="fr_trend_section.jpg" alt="후지 Rock Festival 현장" class="w-100">
-              <span class="badge-japan-now position-absolute top-0 start-0 m-3 fw-bold text-danger">Japan now</span>
-            </div>
-            
-            <div class="card-body-box p-4 text-center">
-              <h3 class="card-main-title fw-bold text-dark mb-1">후지 Rock Festival</h3>
-              <div class="card-sub-info text-muted mb-3 small">
-                <span class="d-block">행사 기간</span>
-                <span class="fw-semibold text-dark">TOKYO</span>
-              </div>
-              
-              <div class="card-details-list text-start d-inline-block mx-auto">
-                <p class="mb-1 text-secondary">🗺️ <strong>축제 볼거리</strong></p>
-                <ul class="list-unstyled ps-2 mb-3 text-muted small lh-lg">
-                  <li>• 일본 MZ세대 성지급 축제</li>
-                  <li>• 일본 최대 야외 음악 페스티벌</li>
-                  <li>• 캠핑 + 자연 + EDM/록 감성</li>
-                </ul>
-              </div>
-              
-              <div class="blog-go-btn mt-2 text-danger fw-bold small">
-                🔥 <span class="text-decoration-underline">blog 바로가기</span>
-              </div>
-            </div>
 
-          </div>
-        </a>
+      <div class="menu-item">
+        <div class="menu-box">
+          <div class="menu-title">다양하고 편한 결제</div>
+          <div class="menu-sub">신용/체크카드</div>
+          <div class="menu-sub">간편결제/paypal</div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <div class="menu-box">
+          <div class="menu-title">품목별 통관규정</div>
+          <div class="menu-sub">금지물품 list</div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <div class="menu-box">
+          <div class="menu-title">다양한 배송선택으로</div>
+          <div class="menu-sub menu-highlight">이젠 고민끝</div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <div class="menu-box">
+          <div class="menu-title">로그인즉시 자동지급</div>
+          <div class="menu-sub menu-highlight">welcome 혜택</div>
+        </div>
       </div>
 
     </div>
+
+  </section>
+
+
+
+<!-- 작은 아이템 끝 -->
+
+
+
+<!-- 퀵 메뉴 시작 -->
+
+
+<div class="right_quick ">
+    
+    <a href="#review" class="right_quick_item">
+        <i class="bi bi-pencil"></i>
+        <span>구매후기<br class="d-none d-md-inline"> 작성</span>
+    </a>
+    
+    <a href="#calculator" class="right_quick_item">
+        <i class="bi bi-calculator"></i>
+        <span>관부가세<br class="d-none d-md-inline"> 계산기</span>
+    </a>
+    
+    <a href="#customs-id" class="right_quick_item">
+        <i class="bi bi-question-circle"></i>
+        <span>개인통관<br class="d-none d-md-inline"> 고유번호</span>
+    </a>
+    
+    <a href="#attendance" class="right_quick_item quick_purple">
+        <span>출석체크</span>
+    </a>
+    
+    <a href="#recent" class="right_quick_item quick_purple">
+        <span>오늘본상품</span>
+    </a>
+    
+    <a href="#delivery" class="right_quick_item quick_purple">
+        <span>택배조회</span>
+    </a>
+    
+    <a href="#" class="right_quick_item quick_top text-white" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+        <span class="fw-bold">TOP</span>
+    </a>
+    
+</div>
+
+
+<!-- 퀵 메뉴 끝 -->
+
+
+
+
+
+
+<!-- 트랜드 섹션 시작 -->
+
+<section id="trend-section" class="trend-section-wrap">
+
+  <!-- background deco image -->
+  <div class="trend-bg-deco">
+   
   </div>
+
+  <div class="container position-relative">
+
+    <div class="row align-items-center gy-5  py-5 ">
+
+      <!-- LEFT -->
+      <div class="col-lg-6 pt-5">
+   
+        <div class="trend-left-box">
+          <!-- <img src="./img/img_bg/tren_left_bg_img.png" alt="background deco" > -->
+
+          <!-- 이동 버튼 -->
+          <a href="#trend-slider" class="trend-main-link">
+
+            <span class="trend-mini-text">
+              Japan now
+            </span>
+
+            <h2 class="trend-title">
+              남들보다 한발 빠르게,
+            </h2>
+
+            <h3 class="trend-sub-title">
+              일본 SNS를 장악한 화제의
+            </h3>
+
+            <p class="trend-desc">
+              그 제품 이젠 <span>kolex</span>에서
+            </p>
+
+            <div class="trend-btn">
+              트렌드 보러가기 →
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col pt-5 ms-5">
+
+        <!-- carousel -->
+        <div
+          id="trend-slider"
+          class="carousel slide trend-carousel"
+          data-bs-ride="carousel"
+          data-bs-interval="1000"
+        >
+
+          <!-- indicators -->
+          <div class="carousel-indicators">
+
+            <button
+              type="button"
+              data-bs-target="#trend-slider"
+              data-bs-slide-to="0"
+              class="active"
+            ></button>
+
+            <button
+              type="button"
+              data-bs-target="#trend-slider"
+              data-bs-slide-to="1"
+            ></button>
+
+            <button
+              type="button"
+              data-bs-target="#trend-slider"
+              data-bs-slide-to="2"
+            ></button>
+
+          </div>
+
+          <!-- slides -->
+          <div class="carousel-inner  overflow-visible">
+
+            <!-- item 01 -->
+            <div class="carousel-item active ">
+
+              <a href="blog-link-1.html" class="trend-card-link ">
+
+                <div class="trend-card">
+
+                  <div class="trend-thumb">
+                    <img
+                      src="./img/img_bg/fuji_rock_fes_img.png"
+                      alt="후지락 페스티벌"
+                    >
+
+                    <div class="trend-badge">
+                      Japan now
+                    </div>
+                  </div>
+
+                  <div class="trend-content">
+
+                    <h3>
+                      후지 Rock Festival
+                    </h3>
+
+                    <div class="trend-info">
+                      <span>✈ 축제 볼거리</span>
+                    </div>
+
+                    <p>
+                      일본 MZ세대 성지급 축제<br>
+                      일본 최대 야외 음악 페스티벌<br>
+                      캠핑 + 자연 + EDM 감성
+                    </p>
+
+                    <span class="trend-blog-link">
+                      🔥 blog 바로가기
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </a>
+
+            </div>
+
+            <!-- item 02 -->
+            <div class="carousel-item">
+
+              <a href="blog-link-2.html" class="trend-card-link">
+
+                <div class="trend-card">
+
+                  <div class="trend-thumb">
+                    <img
+                      src="./img/img_bg/sentai_fes_img.png"
+                      alt="센타이 타나바타 마쯔리"
+                    >
+
+                    <div class="trend-badge">
+                      Tokyo hot
+                    </div>
+                  </div>
+
+                  <div class="trend-content">
+
+                    <h3>
+                      센타이 타나바타 마쯔리
+                    </h3>
+
+                    <div class="trend-info">
+                      <span>✈ 미야기현 센다이 시내 중심가 </span>
+                    </div>
+
+                    <p>
+                       중국의 칠석 전통에서 비롯되어, 별의 연인 오리히메와 히코보시의 전설을 기념<br>
+                      상징: 오색 종이 장식(타나바타 장식)과 대형 종이 장식이 거리를 가득 메움<br>
+                      감성적인 분위기: 별과 소원을 주제로 한 낭만적인 테마 
+                    </p>
+
+                    <span class="trend-blog-link">
+                      🔥 blog 바로가기
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </a>
+
+            </div>
+
+            <!-- item 03 -->
+            <div class="carousel-item">
+
+              <a href="blog-link-3.html" class="trend-card-link">
+
+                <div class="trend-card">
+
+                  <div class="trend-thumb">
+                    <img
+                      src="https://article-image.travel.navitime.jp/img/NTJjtg2604009/image1.jpg"
+                      alt="불꽃축제"
+                    >
+
+                    <div class="trend-badge">
+                      Osaka night
+                    </div>
+                  </div>
+
+                  <div class="trend-content">
+
+                    <h3>
+                      일본 불꽃 축제
+                    </h3>
+
+                    <div class="trend-info">
+                      <span>✈ 20,000 발 규모</span>
+                    </div>
+
+                    <p>
+                      일본 대표 여름 불꽃 행사<br>
+                      밤하늘을 채우는 대형 이벤트<br>
+                      일본 감성 여행 필수 코스
+                    </p>
+
+                    <span class="trend-blog-link">
+                      🔥 blog 바로가기
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
+
+
+
 <!-- 트랜드 섹션 끝 -->
+
+<!-- 코스메틱&웰니스섹션 시작 -->
+ <!-- =========================
+변경된 carousel-item 구조
+기존 : 내부 row + col 구조
+변경 : carousel-item 자체에 background-image 적용
+========================= -->
+
+
+ <!-- 코스메틱 웰니스 섹션 끝 -->
 
 
 <!-- why 섹션시작-->
  <section class="why-kolex-section py-5">
-  <div class="container">
+
     
     <div class="text-center mb-5">
       <span class="badge-trust mb-2">신뢰</span>
       <h2 class="section-title fw-bold">왜 Kolex여야 하는가</h2>
       <p class="section-subtitle text-muted">Kolex만의 차별화된 가치를 경험하세요</p>
     </div>
+    <div class="container my-5">
+      <div id="mainHeroCarousel" class="carousel slide" data-bs-ride="carousel">
 
-    <div class="row g-4 spec-grid-container">
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainHeroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button> 
+          <div class="carousel-indicators"  >
+            <button type="button" data-bs-target="#mainHeroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mainHeroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+
+          <div class="carousel-inner">
+
+            <div class="carousel-item active hero-slide" >
+              
+              
+
+              <div class="container h-100 position-relative">
+                <div class="row h-100 ">
+
+                  <div class="col-lg-6 leftbloom" >
+                    <div class="hero-content">
+                      <span class="hero-mini-text">"KOLEX Bloom"</span>
+                      <h3 class="main-title">
+                        당신의 아름다움이<br>피어나는 시간
+                      </h3>
+                      <p class="main-desc">
+                        일본 드럭스토어의 대란템부터<br>프리미엄 뷰티 아이템까지 엄선했습니다.
+                      </p>
+                      <div class="hero-btn-group">
+                        <!-- <a href="#" class="btn-custom">보러가기</a> -->
+                        <a href="#" class="hero-category">화장품 →</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="right-grid">
+
+                      <a href="#" class="mini-card" style="background-image: url('./img/img_bg/balance_bg_img.png');">
+                        <div class="mini-card-bg" ></div>
+                        <div class="mini-card-overlay"></div>
+                        <div class="mini-card-content">
+                          <h3>무너진 일상의 밸런스를 찾는 루틴</h3>
+                          <span>건강기능식품 →</span>
+                        </div>
+                      </a>
+
+                      <a href="#" class="mini-card" style="background-image: url('./img/img_bg/city_bg_img.png');">
+                        <div class="mini-card-bg" ></div>
+                        <div class="mini-card-overlay"></div>
+                        <div class="mini-card-content">
+                          <h3>Sony와 Audio-Technica 등 일본 명품 오디오</h3>
+                          <span>이어폰&음향기기 →</span>
+                        </div>
+                      </a>
+
+                      <a href="#" class="mini-card" style="background-image: url('./img/img_bg/moutain_bg_img.jpg');">
+                        <div class="mini-card-bg" ></div>
+                        <div class="mini-card-overlay"></div>
+                        <div class="mini-card-content">
+                          <h3>Snow Peak와 DOD 등 일본 감성 캠핑 브랜드</h3>
+                          <span>아웃도어캠핑용품 →</span>
+                        </div>
+                      </a>
+
+                      <a href="#" class="mini-card" style="background-image: url('./img/img_bg/gren_snoopy_bg_img.png');">
+                        <div class="mini-card-bg"></div>
+                        <div class="mini-card-overlay" ></div>
+                        <div class="mini-card-content">
+                          <h3>애니메이션과 게임 한정 굿즈</h3>
+                          <span>덕후굿즈 →</span>
+                        </div>
+                      </a>
+
+                    </div>
+                  </div> </div>
+              </div>
+            </div> 
       
-      <div class="col-lg-6 col-md-12">
-        <div class="feature-card-main position-relative overflow-hidden h-100 rounded-4" style="background-image: url('why_kolex.jpg');">
-          <div class="card-overlay d-flex flex-column justify-content-end p-4 p-md-5 h-100">
-            <span class="text-light-purple small fw-semibold mb-2">차별점</span>
-            <h3 class="text-white fw-bold mb-3 lh-sm">정교한 큐레이션으로<br>최고의 제품만</h3>
-            <p class="text-white-50 small mb-4">일본 현지 트렌드와 전문가의 안목으로 엄선한 최고의 제품을 제안합니다.</p>
-            
-            <div class="d-flex align-items-center gap-3 mt-2">
-              <a href="#" class="btn-text-link">더보기</a>
-              <a href="#" class="btn-text-link">큐레이션 <i class="bi bi-chevron-right small"></i></a>
-            </div>
-          </div>
-        </div>
+          </div> 
+        
+        <button class="carousel-control-next" type="button" data-bs-target="#mainHeroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
       </div>
-
-      <div class="col-lg-6 col-md-12">
-        <div class="row g-4 h-100">
-          
-          <div class="col-md-6">
-            <div class="feature-card-sub border-purple rounded-4 p-4 d-flex flex-column justify-content-between h-100">
-              <div>
-                <div class="icon-box mb-3">
-                  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238a2be2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'></path><polyline points='3.27 6.96 12 12.01 20.73 6.96'></polyline><line x1='12' y1='22.08' x2='12' y2='12'></line></svg>" alt="cube icon">
-                </div>
-                <h4 class="card-sub-title fw-bold mb-2">일본 현지 공식 루트를<br>통한 정품 보장</h4>
-                <p class="card-sub-desc text-muted">100% 정품만 취급하며 모든 상품에 대해 완벽한 정품 인증을 제공합니다.</p>
-              </div>
-              <div class="text-end mt-3">
-                <a href="#" class="btn-arrow-link text-purple">정품 <i class="bi bi-chevron-right"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="feature-card-sub border-purple rounded-4 p-4 d-flex flex-column justify-content-between h-100">
-              <div>
-                <div class="icon-box mb-3">
-                  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238a2be2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'></path><polyline points='3.27 6.96 12 12.01 20.73 6.96'></polyline><line x1='12' y1='22.08' x2='12' y2='12'></line></svg>" alt="cube icon">
-                </div>
-                <h4 class="card-sub-title fw-bold mb-2"><br>합리적인 배송비와<br>간편한 구매 대행</h4>
-                <p class="card-sub-desc text-muted">복잡한 과정 없이 간단하게 일본 아이템을 구매할 수 있습니다.</p>
-              </div>
-              <div class="text-end mt-3">
-                <a href="#" class="btn-arrow-link text-purple">배송 <i class="bi bi-chevron-right"></i></a>
-              </div>
-            </div>
-          </div>
+    </div>
+      
+ 
  </section>
-          <!-- why 섹션 끝 -->
+<!-- why 섹션 끝 -->
 
-          <!-- 피드백 섹션 -->
+<!-- 피드백 섹션 -->
  <section class="review-section py-5" style="background-image: url('pead_back.jpg');">
   <div class="section-overlay"></div>
 
@@ -470,193 +891,6 @@ KOLEX HEADER
 
 <!-- 피드백 섹션 끝 -->
 
- <!-- why 섹션 __2 시작 -->
-  <div class="container hero-wrap">
-
-  <!-- Swiper / Carousel -->
-  <div
-    id="mainVisual"
-    class="carousel slide main-swiper"
-    data-bs-ride="carousel"
-    data-bs-interval="3000"
-  >
-
-    <!-- Indicator -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#mainVisual" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#mainVisual" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#mainVisual" data-bs-slide-to="2"></button>
-    </div>
-
-    <!-- Slides -->
-    <div class="carousel-inner">
-
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row align-items-center">
-
-          <div class="col-lg-6 left-content">
-            <h1 class="main-title">
-              당신의 아름다움이<br/>
-              피어나는 시간
-            </h1>
-
-            <p class="main-desc">
-              일본 드럭스토어의 대란템부터 프리미엄 뷰티 아이템까지
-              엄선했습니다.
-            </p>
-
-            <button class="btn-custom">
-              보러가기
-            </button>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="right-grid">
-
-              <div
-                class="mini-card"
-                style="background-image:url('https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=1200');"
-              >
-                <div class="mini-title">
-                  뷰티 & 화장품
-                </div>
-                <div class="mini-tag">
-                  KOLEX Bloom
-                </div>
-              </div>
-
-              <div
-                class="mini-card"
-                style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200');"
-              >
-                <div class="mini-title">
-                  일본 명품 오디오
-                </div>
-                <div class="mini-tag">
-                  Sony / Audio
-                </div>
-              </div>
-
-              <div
-                class="mini-card"
-                style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200');"
-              >
-                <div class="mini-title">
-                  감성 캠핑 브랜드
-                </div>
-                <div class="mini-tag">
-                  Snow Peak
-                </div>
-              </div>
-
-              <div
-                class="mini-card"
-                style="background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200');"
-              >
-                <div class="mini-title">
-                  애니메이션 굿즈
-                </div>
-                <div class="mini-tag">
-                  일본 한정판
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-
-          <div class="col-lg-6 left-content">
-            <h1 class="main-title" style="color:#222;">
-              센다이 타나바타<br/>
-              마츠리
-            </h1>
-
-            <p class="main-desc">
-              매년 8월 6~8일 개최되는 일본 대표 여름 축제
-            </p>
-
-            <button class="btn-custom">
-              축제 보러가기
-            </button>
-          </div>
-
-          <div class="col-lg-6">
-            <img
-              src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=1400"
-              class="img-fluid rounded-4"
-              alt=""
-            />
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="row align-items-center">
-
-          <div class="col-lg-6 left-content">
-            <h1 class="main-title" style="color:#ff5722;">
-              스미다가와<br/>
-              불꽃놀이 축제
-            </h1>
-
-            <p class="main-desc">
-              도쿄 여름 밤하늘을 수놓는 대표 불꽃축제
-            </p>
-
-            <button class="btn-custom">
-              자세히 보기
-            </button>
-          </div>
-
-          <div class="col-lg-6">
-            <img
-              src="https://images.unsplash.com/photo-1533158326339-7f3cf2404354?q=80&w=1400"
-              class="img-fluid rounded-4"
-              alt=""
-            />
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Left Button -->
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#mainVisual"
-      data-bs-slide="prev"
-    >
-      <div class="nav-btn">
-        <i class="bi bi-chevron-left"></i>
-      </div>
-    </button>
-
-    <!-- Right Button -->
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#mainVisual"
-      data-bs-slide="next"
-    >
-      <div class="nav-btn">
-        <i class="bi bi-chevron-right"></i>
-      </div>
-    </button>
-
-  </div>
-</div>
- <!-- why 섹션__2 끝 -->
 
 <!-- 유튜브 섹션 시작 -->
 
@@ -697,9 +931,6 @@ KOLEX HEADER
 
 <!-- 프로세스 섹션 시작 -->
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-
 <section class="process-section py-5 bg-white">
   <div class="container" style="max-width: 900px;">
     
@@ -731,7 +962,7 @@ KOLEX HEADER
             </div>
           </div>
 
-          <div class="timeline-item left-item js-animate">
+          <div class="timeline-item right-item js-animate">
             <div class="timeline-icon bg-purple-sub">
               <i class="bi bi-clock"></i>
             </div>
@@ -757,7 +988,7 @@ KOLEX HEADER
       <div class="tab-pane fade" id="auction-panel" role="tabpanel" aria-labelledby="auction-tab">
         <div class="timeline-container">
           
-          <div class="timeline-item right-item js-animate">
+          <div class="timeline-item left-item js-animate">
             <div class="timeline-icon bg-green-sub">
               <i class="bi bi-cart3"></i>
             </div>
@@ -777,7 +1008,7 @@ KOLEX HEADER
             </div>
           </div>
 
-          <div class="timeline-item right-item js-animate">
+          <div class="timeline-item left-item js-animate">
             <div class="timeline-icon bg-purple-sub">
               <i class="bi bi-clock"></i>
             </div>
@@ -806,90 +1037,6 @@ KOLEX HEADER
 
 <!-- 프로세스 끝 __1 -->
 
-
-
-
-<div id="hd_wrapper">
-    	<div class="topSet">
-				<ul class="topLink" style="height: auto;">
-                	<li class="first on">
-						<a href="/ys/bbs/board.php?bo_table=story&amp;wr_id=1" title="종이미술관 story" style="border-left-width: 0px;">
-							종이미술관 STORY
-						</a>
-					</li>
-					<li class="link_2">
-						<a href="/ys/bbs/board.php?bo_table=info_1&amp;wr_id=1" title="종이조형미술관">
-							종이조형미술관
-						</a>
-					</li>
-					<li class="link_3">
-						<a href="/ys/bbs/board.php?bo_table=child_view" title="어린이미술관">
-							어린이미술관
-						</a>
-					</li>
-					<li class="link_4">
-						<a href="/ys/bbs/board.php?bo_table=facilities" title="주요시설">
-							주요시설
-						</a>
-					</li>
-					<li class="link_5">
-						<a href="/ys/bbs/board.php?bo_table=winner" title="수상작보기">
-						수상작보기	
-						</a>
-					</li>
-				</ul>	
-			</div><!--topSet 끝-->
-            <div class="naviWrap">
-            	<h1><a href="http://xn--zb0bw7zdte34f8nb.com/ys"><img src="http://xn--zb0bw7zdte34f8nb.com/ys/img/move_logo.gif" alt="종이미술관" title=""></a></h1>
- 
-                <div class="allMenuView">
-                	<div class="allMenuWrap">
-                    	<h2><img src="http://xn--zb0bw7zdte34f8nb.com/ys/img/allMenu_icon.gif" alt="전체메뉴">전체메뉴</h2>
-                        <div class="allArea">
-                        	<div class="allDiv">
-                            	<h3></h3>
-                            </div>
-                            <div class="allDiv">
-                            	<h3></h3>
-                            </div>
-                            <div class="allDiv">
-                            	<h3></h3>
-                            </div>
-                            <div class="allDiv">
-                            	<h3></h3>
-                            </div>
-                            <div class="allDiv">
-                            	<h3></h3>
-                            </div>
-                            <div class="allDiv">
-                            	<h3></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            </div><!--naviWrapn끝-->
-            
-            
-            
-            
-
-
-        <!--<div id="text_size">
-            <!-- font_resize('엘리먼트id', '제거할 class', '추가할 class'); -->
-            <!--<button id="size_down" onclick="font_resize('container', 'ts_up ts_up2', '');"><img src="http://xn--zb0bw7zdte34f8nb.com/ys/img/ts01.gif" alt="기본"></button>
-            <button id="size_def" onclick="font_resize('container', 'ts_up ts_up2', 'ts_up');"><img src="http://xn--zb0bw7zdte34f8nb.com/ys/img/ts02.gif" alt="크게"></button>
-            <button id="size_up" onclick="font_resize('container', 'ts_up ts_up2', 'ts_up2');"><img src="http://xn--zb0bw7zdte34f8nb.com/ys/img/ts03.gif" alt="더크게"></button>
-        </div>-->
-    </div>
-
-
-
-
-
-
-
 <!-- =========================
 KOLEX FOOTER
 ========================= -->
@@ -897,8 +1044,6 @@ KOLEX FOOTER
 
 <footer class="kolex-footer ">
     
-    </div>
-
 <div class="container">
     <div class="row">
         <div class="col-3 ">
@@ -929,7 +1074,7 @@ KOLEX FOOTER
 
                     <div class="exchange-card">
 
-                        <img src="jp.png" alt="JP">
+                        <img src="./img/img_bg/icons8-japan-100.png" alt="JP">
 
                         <span>1 ￥ 9.9</span>
 
@@ -937,7 +1082,7 @@ KOLEX FOOTER
 
                     <div class="exchange-card">
 
-                        <img src="us.png" alt="US">
+                        <img src="./img/img_bg/icons8-미국-100.png" alt="US">
 
                         <span>1 $ 1538.2</span>
 
@@ -981,7 +1126,7 @@ KOLEX FOOTER
                 </div>
 
                 <!-- EMAIL -->
-                <form class="newsletter-form">
+                <form class="newsletter-form gap-0">
 
                     <input
                         type="email"
@@ -989,7 +1134,7 @@ KOLEX FOOTER
                         placeholder="이메일 입력"
                     >
 
-                    <button type="submit" class="newsletter-btn">
+                    <button type="submit" class="newsletter-btn px-3">
                         구독
                     </button>
 
@@ -1075,39 +1220,14 @@ KOLEX FOOTER
 </footer>
   
 
-    
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pretendard-std@1.3.9/subset.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/pretendard-std@1.3.9/subset.min.js"></script> -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./javaScript/my_js.js"></script>
 
-<script>
 
-    // COUNTRY TAB
-    const countryButtons = document.querySelectorAll('.country-btn');
 
-    countryButtons.forEach(btn => {
-
-        btn.addEventListener('click', function(){
-
-            countryButtons.forEach(item => {
-                item.classList.remove('active');
-            });
-
-            this.classList.add('active');
-
-            const country = this.dataset.country;
-
-            // 추후 국가별 처리
-            console.log(country);
-
-        });
-
-    });
-
-</script>
 
 </body>
 </html>

@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  // 상단텍스트광고 슬라이드
+  const topBannerSwiper = new Swiper('.top-banner .swiper', {
+        // 좌우 무한 루프 롤링 활성화
+        direction: 'vertical',
+        loop: true,
+        // 3초마다 자동으로 롤링되도록 설정
+        autoplay: {
+            delay: 3000, // 3000ms = 3초
+            disableOnInteraction: false, // 사용자가 마우스로 만져도 자동 롤링이 멈추지 않도록 설정
+        },
+
+       
+    });
+
+
+
+
+
   const heroSwiper = new Swiper('.hero-swiper', {
     // 기본 설정
     slidesPerView: 1,
@@ -21,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
       clickable: true, // 점을 클릭했을 때 해당 슬라이드로 이동
     },
   });
-});
+
 
 // 프로세스 자바 시작
 
-document.addEventListener('DOMContentLoaded', function () {
+
   
   // 1. 특정 패널 안의 요소들을 순차적으로 모아주는 함수 정의
   function triggerPanelAnimation(panelId) {
@@ -72,3 +91,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 프로세스 자바 끝 
 
+
+// 벚꽃 커서 스크립 시작
+
+    
+        // const cursor = document.getElementById('sakuraCursor');
+
+        // // 1. 마우스 움직임에 따라 커서 위치 동기화
+        // document.addEventListener('mousemove', (e) => {
+        //     cursor.style.left = e.clientX + 'px';
+        //     cursor.style.top = e.clientY + 'px';
+        // });
+
+        // // 2. 클릭 시 꾹 누르는 시각 효과 피드백
+        // document.addEventListener('mousedown', () => {
+        //     cursor.classList.add('click-active');
+        // });
+        // document.addEventListener('mouseup', () => {
+        //     cursor.classList.remove('click-active');
+        // });
+
+        // // 3. 버튼 클릭 시 상황(테마)에 맞춰 커서 색상 변경하기
+        // const buttons = document.querySelectorAll('.theme-btn');
+        
+        // buttons.forEach(button => {
+        //     button.addEventListener('click', (e) => {
+        //         // 기존 커서 색상 클래스 모두 제거
+        //         cursor.className = 'custom-cursor';
+                
+        //         // 버튼에 지정된 data-color 값 가져와서 추가
+        //         const targetColor = e.target.getAttribute('data-color');
+        //         cursor.classList.add(targetColor);
+        //     });
+        // });
+   
+
+  // 벚꽃 커서 끝 

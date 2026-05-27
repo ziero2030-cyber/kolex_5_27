@@ -1,17 +1,52 @@
 /* =========================
 RESET
 ========================= */
-
+/* 마우스 커서  설정부분 */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    word-break: keep-all;
 }
 
 body{
     font-family:'Pretendard', sans-serif;
     background:#f3f1f1;
 }
+
+
+
+
+#custom-cursor{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:40px;
+    height:40px;
+
+    background:url('./img/icon/cursor.png') center center no-repeat;
+    background-size:contain;
+
+    pointer-events:none;
+
+    transform:translate(-50%, -50%);
+
+    z-index:999999;
+
+    transition:
+        transform .08s linear,
+        width .2s ease,
+        height .2s ease;
+}
+
+/* hover 시 커서 확대 */
+a:hover ~ #custom-cursor,
+button:hover ~ #custom-cursor{
+    width:60px;
+    height:60px;
+}
+
 
 /* =========================
 HEADER
@@ -28,11 +63,11 @@ HEADER
 .gnb_back{ height: 130px;width: 100%;position: absolute;left: 0;top: 30px;background-color:white;z-index: 10; border-bottom:1px solid #000;}
 #hd {min-height:30px; border-bottom:1px solid #4c4c4c; padding-bottom:18px; background:url('/ys/img/bg_topSet.jpg') repeat-x top; background-color:#fff; margin-bottom:40px; position:relative;}
 #hd a{ text-decoration:none;}
-#hd_wrapper {width:1255px;margin:0 auto;position: relative;z-index: 1000;}
+/* #hd_wrapper {width:1255px;margin:0 auto;position: relative;z-index: 1000;} */
 #hd_wrapper .topSet { overflow:hidden; }
 #hd_wrapper .topSet .topLink { overflow:hidden; }
 #hd_wrapper .topSet .topLink li { width:245px; float:left; background: #333;}
-#hd_wrapper .topSet .topLink li a { height:30px; line-height:30px; display:block; font-size:13px; color:#b6b6b6; text-align:center; letter-spacing:-1px; border-left:1px solid #222222; }
+#hd_wrapper .topSet .topLink li a { height:50px; line-height:50px; display:block; font-size:1.5rem; color:#b6b6b6; text-align:center; letter-spacing:-1px; border-left:1px solid #222222; }
 #hd_wrapper .topSet .topLink li.on a { color:#b3a26a; background-color:#000000; }
 #hd_wrapper .topSet .topLink li.link_2.on a, #hd_wrapper .topSet .topLink li.link_2 a:hover{ background:#387167; color:#fff;}
 #hd_wrapper .topSet .topLink li.link_3.on a, #hd_wrapper .topSet .topLink li.link_3 a:hover{ background:#ffc223;color:#fff;}
@@ -76,16 +111,18 @@ HEADER
 }
 
 .hero-swiper .slide-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 비율을 유지하며 영역을 채움 */
-  display: block;
+
+  width: 81%;
+    /* height: 100%; */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;;
 }
 
 /* 하단 불(페이지네이션) 커스텀 스타일링 */
 .hero-swiper .swiper-pagination-bullet {
-  width: 50px;
-  height: 50px;
+  width: 15px;
+  height: 15px;
   background: #ccc;
   opacity: 1;
   margin: 0 6px !important;
@@ -95,8 +132,8 @@ HEADER
 /* 활성화된 현재 슬라이드의 불빛 스타일 */
 .hero-swiper .swiper-pagination-bullet-active {
   background: #a374db; /* 브랜드 아이덴티티에 맞춘 파스텔 퍼플 톤 예시 */
-  width: 24px;         /* 활성화되었을 때 가로로 살짝 길어지는 트렌디한 효과 */
-  border-radius: 5px;
+  width: 15px;         /* 활성화되었을 때 가로로 살짝 길어지는 트렌디한 효과 */
+
 }
 
 /* 히어로 secton 끝 */
@@ -187,7 +224,7 @@ HEADER
 
 /* 트랜드 섹션 시작 */
 /* 부드러운 스크롤 이동을 위한 글로벌 설정 */
-html {
+/* html {
   scroll-behavior: smooth;
 }
 
@@ -201,7 +238,7 @@ html {
 /* 왼쪽 타이틀 영역 배경 일러스트 커스텀 */
 .trend-left-content {
   /* 업로드하신 이미지의 왼쪽 화려한 그래피티 느낌을 배경으로 깔고 싶을 때 사용 */
-  background-image: url('fr_trend_section.jpg');
+  /* background-image: url('fr_trend_section.jpg'); */
   background-size: 200% auto; /* 왼쪽 구역만 보이도록 스케일 조정 예시 */
   background-position: left center;
   background-repeat: no-repeat;
@@ -217,7 +254,8 @@ html {
 .trend-card-link {
   display: block;
   width: 100%;
-  max-width: 420px; /* 카드 최대 너비 제한 */
+  /* max-width: 420px;  */
+  /* 카드 최대 너비 제한 */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -244,9 +282,587 @@ html {
 .card-main-title {
   font-size: 1.5rem;
   letter-spacing: -0.5px;
+} */
+
+
+/* *************************************************************************** */
+/* =========================
+   SECTION
+========================= */
+#trend-section.trend-section-wrap{
+  position:relative;
+  overflow:hidden;
+  padding:100px 0;
+  background:#000;
+}
+
+/* 배경 데코 */
+.trend-bg-deco{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  opacity:0.18;
+  pointer-events:none;
+}
+
+.trend-bg-deco img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* container */
+#trend-section .container{
+  position:relative;
+  z-index:3;
+}
+
+/* =========================
+   LEFT AREA
+========================= */
+.trend-left-box{
+  position:relative;
+
+  /* 핵심 */
+  min-height:620px;
+
+  border-radius:30px;
+  overflow:hidden;
+
+  padding:70px 60px;
+
+  display:flex;
+  align-items:center;
+
+  /* 배경 이미지 */
+  /* background-image:url("images/trend-left-bg.jpg"); */
+  /* background-size:cover; */
+  background-position:center center;
+  background-repeat:no-repeat;
+
+  isolation:isolate;
+}
+
+/* 어두운 오버레이 */
+.trend-left-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: #ffffff;
+  z-index:-1;
+}
+
+/* 배경 이미지 직접 img로 넣을 경우 */
+.trend-left-box img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  position:absolute;
+  inset:0;
+
+  z-index:-2;
+}
+
+/* 링크 */
+.trend-main-link{
+  text-decoration:none;
+  color:#fff;
+  display:block;
+  width:100%;
+}
+
+/* 텍스트 */
+.trend-mini-text{
+  display:inline-block;
+  margin-bottom:20px;
+
+  font-size:0.95rem;
+  font-weight:700;
+  letter-spacing:4px;
+
+  color:#ff5c3d;
+  text-transform:uppercase;
+}
+
+.trend-title{
+  font-size:3rem;
+  font-weight:900;
+  line-height:1.4;
+  margin-bottom:24px;
+  color: #004b8d;
+}
+
+.trend-sub-title{
+  font-size:2.2rem;
+  font-weight:700;
+  line-height:1.5;
+  margin-bottom:24px;
+  color: #004b8d;
+}
+
+.trend-desc{
+  font-size:1.9rem;
+  font-weight:800;
+  margin-bottom:38px;
+   color: #004b8d;
+}
+
+.trend-desc span{
+  color:#ff5c3d;
+}
+
+/* 버튼 */
+.trend-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:16px 34px;
+
+  border-radius:100px;
+
+  background:#fff;
+  color:#111;
+
+  font-weight:800;
+
+  transition:0.3s ease;
+}
+
+.trend-main-link:hover .trend-btn{
+  background:#ff5c3d;
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+/* =========================
+   RIGHT SLIDER
+========================= */
+.trend-carousel{
+  position:relative;
+}
+
+.trend-card-link{
+  text-decoration:none;
+}
+
+.trend-card{
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+
+  transition:0.35s ease;
+}
+
+.trend-card:hover{
+  transform:translateY(-8px);
+}
+
+.trend-thumb{
+  position:relative;
+  overflow:hidden;
+}
+
+.trend-thumb img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  display:block;
+}
+
+.trend-badge{
+  position:absolute;
+  top:20px;
+  left:20px;
+
+  padding:10px 20px;
+
+  background:#ff3b2f;
+  color:#fff;
+
+  border-radius:100px;
+
+  font-size:1rem;
+  font-weight:800;
+}
+
+.trend-content{
+  padding:34px;
+  text-align:center;
+}
+
+.trend-content h3{
+  font-size:2rem;
+  font-weight:900;
+  color:#111;
+
+  margin-bottom:18px;
+}
+
+.trend-info{
+  margin-bottom:18px;
+}
+
+.trend-info span{
+  color:#111;
+  font-weight:700;
+  font-size:1rem;
+}
+
+
+.trend-content p {
+  /* 여러 줄 말줄임을 위한 필수 속성들 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;           /* 보여주고 싶은 줄 수 (3줄) */
+  -webkit-box-orient: vertical;  /* 정렬 방향을 세로로 설정 */
+  
+  /* 영역을 벗어나는 글자 숨기기 */
+  overflow: hidden;
+  text-overflow: ellipsis;       /* 넘치는 부분에 ... 표시 */
+  
+  /* (선택사항) 줄바꿈 시 단어가 어색하게 잘리지 않도록 방지 */
+  word-break: break-all;
+   font-size:1rem;
+  line-height:1.5;
+  color:#444;
+
+  margin-bottom:22px;
+}
+
+.trend-blog-link{
+  color:#ff3b2f;
+  font-size:1rem;
+  font-weight:800;
+}
+
+/* =========================
+   INDICATORS
+========================= */
+.carousel-indicators{
+  bottom:-55px;
+}
+
+.carousel-indicators button{
+  width:12px !important;
+  height:12px !important;
+
+  border-radius:50%;
+
+  background:#fff !important;
+
+  opacity:0.35;
+}
+
+.carousel-indicators .active{
+  opacity:1;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media(max-width:991px){
+
+  #trend-section.trend-section-wrap{
+    padding:80px 0;
+  }
+
+  .trend-left-box{
+    min-height:500px;
+    padding:60px 40px;
+    margin-bottom:20px;
+  }
+
+  .trend-title{
+    font-size:2.3rem;
+  }
+
+  .trend-sub-title{
+    font-size:1.8rem;
+  }
+
+  .trend-desc{
+    font-size:1.5rem;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:576px){
+
+  #trend-section.trend-section-wrap{
+    padding:60px 0;
+  }
+
+  .trend-left-box{
+    min-height:420px;
+    padding:40px 28px;
+    border-radius:22px;
+  }
+
+  .trend-title{
+    font-size:1.8rem;
+  }
+
+  .trend-sub-title{
+    font-size:1.4rem;
+    color: #b40083;
+  }
+
+  .trend-desc{
+    font-size:1.15rem;
+  }
+
+  .trend-thumb img{
+    height:240px;
+  }
+
+  .trend-content{
+    padding:24px;
+  }
+
+  .trend-content h3{
+    font-size:1.45rem;
+  }
+
 }
 
 /* 트랜드 섹션 끝 */
+
+/* 코스메 웰니스 섹션 시작 */
+
+    /* =========================
+    [수정/추가된 핵심 스타일]
+    ========================= */
+
+    /* 메인 슬라이드 배경 크기 제어 */
+    .hero-slide {
+      position: relative;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 30px;
+      
+      /* [변경] 이미지가 너무 커서 깨지거나 잘리는 현상 방지 */
+      background-size: contain;         /* 이미지가 잘리지 않고 전체가 다 보이도록 설정 */
+      background-position: left center; /* 벚꽃 패턴이 있는 왼쪽을 기준으로 정렬 */
+      background-repeat: no-repeat;
+      background-color: #fff;           /* 이미지 바깥 여백을 깔끔한 흰색으로 처리 */
+    }
+
+    /* 어두운 오버레이 - 글씨 가독성 확보 */
+    /* [변경] 제공해주신 이미지는 밝은 톤이므로, 글씨가 흰색일 때 잘 보이도록 
+       왼쪽 본문 영역 뒤쪽에 살짝 어두운 그라데이션을 깔끔하게 깔아주는 것이 좋습니다. */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 60%);
+      z-index: 1;
+    }
+
+    /* 컨텐츠 레이어 */
+    .hero-slide .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* =========================
+    LEFT CONTENT
+    ========================= */
+    .hero-content {
+      max-width: 520px;
+      padding-right: 40px;
+    }
+
+    .hero-mini-text {
+      display: inline-block;
+      margin-bottom: 22px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .main-title {
+      font-size: 4rem;
+      line-height: 1.25;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 28px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2); /* 글씨 가독성 추가 */
+    }
+
+    .main-desc {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #fff;
+      margin-bottom: 34px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .hero-btn-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-custom {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 58px;
+      padding: 0 34px;
+      border-radius: 100px;
+      background: #3f8f60;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      background: #2f734b;
+      color: #fff;
+    }
+
+    .hero-category {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* =========================
+    RIGHT GRID (우측 미니 카드)
+    ========================= */
+    .right-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .mini-card {
+      position: relative;
+      height: 290px;
+      border-radius: 24px;
+      overflow: hidden;
+      text-decoration: none;
+      isolation: isolate;
+      display: block;
+    }
+
+    /* [변경] 미니 카드 배경 이미지 크기 최적화 */
+    .mini-card-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;                  /* [추가] 꽉 차게 설정 */
+      height: 100%;                 /* [추가] 꽉 차게 설정 */
+      background-size: cover;
+      background-position: center;
+      transform: scale(1);
+      transition: 0.5s;
+    }
+
+    .mini-card:hover .mini-card-bg {
+      transform: scale(1.08);
+    }
+
+    .mini-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.2) 60%,
+        rgba(0, 0, 0, 0) 100__
+      );
+      z-index: 2;
+    }
+
+    .mini-card-content {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 3;
+    }
+
+    .mini-card-content h3 {
+      font-size: 1.25rem; /* 살짝 조정하여 모바일 밸런스 최적화 */
+      line-height: 1.5;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .mini-card-content span {
+      display: inline-flex;
+      align-items: center;
+      height: 42px;
+      padding: 0 18px;
+      border-radius: 100px;
+      background: #fff;
+      color: #111;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* =========================
+    캐러셀 자체 제어용 컨트롤러 스타일 (추가)
+    ========================= */
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+    }
+
+    /* =========================
+    반응형 미디어쿼리 (Tablet & Mobile)
+    ========================= */
+    @media (max-width: 991px) {
+      .hero-slide {
+        min-height: auto;
+        padding: 90px 0;
+        background-size: cover; /* 태블릿 이하는 꽉 차게 변경 */
+        background-position: center;
+      }
+      .hero-overlay {
+        background: rgba(0, 0, 0, 0.45); /* 배경이 커버되므로 전체적으로 어둡게 변경 */
+      }
+      .main-title {
+        font-size: 2.7rem;
+      }
+      .right-grid {
+        margin-top: 50px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-slide {
+        padding: 70px 0;
+        border-radius: 20px;
+      }
+      .main-title {
+        font-size: 2rem;
+      }
+      .main-desc {
+        font-size: 1rem;
+      }
+      .right-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .mini-card {
+        height: 220px;
+      }
+    }
+
+
+/* 코스메 웰니스 섹션 끝 */
 
 /* why 섹션 시작 */
 /* Pretendard 폰트 시스템 기준 */
@@ -485,12 +1101,8 @@ html {
 
 /* 트랜드 섹션__2 시작  */
 
-  <style>
-    body{
-      background:#f4f4f4;
-      font-family: 'Pretendard', sans-serif;
-    }
 
+   
     .hero-wrap{
       padding:60px 0;
     }
@@ -504,7 +1116,7 @@ html {
     }
 
     .carousel-item{
-      padding:60px;
+      /* padding:60px; */
     }
 
     .left-content{
@@ -512,7 +1124,7 @@ html {
     }
 
     .main-title{
-      font-size:56px;
+      font-size:1.5rem;
       font-weight:900;
       line-height:1.2;
       color:#ff66b2;
@@ -662,7 +1274,7 @@ html {
         grid-template-columns:1fr;
       }
     }
-  </style>
+
 
   /* 트랜드 섹션__2 끝 */
 
@@ -892,36 +1504,29 @@ html {
 /* TOP NOTICE */
 
 .top-banner{
-    width:100%;
-    height:50px;
+   
+    
     background:#a0006f;
-    overflow:hidden;
-    position:relative;
-}
 
+   
+
+}
+.top-banner .swiper,
 .notice-slider{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    position:relative;
+  height: 40px;
+  line-height: 40px;
+ 
+   
 }
 
 .notice-track{
-    display:flex;
-    width:300%;
-    height:100%;
-    animation:slideNotice 9s infinite;
+   
+   
 }
 
-.notice-item{
-    width:100%;
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:18px;
-    font-weight:700;
+.notice-item{   
+    font-size:16px;
+    font-weight:500;
 }
 
 @keyframes slideNotice{
@@ -1140,15 +1745,15 @@ html {
 /* CATEGORY */
 
 .category-nav{
-    background:#bdbdbd;
-    height:70px;
+    /* background:#bdbdbd;
+    */
 }
 
 .category-menu{
     list-style:none;
     display:flex;
     align-items:center;
-    height:70px;
+    /* height:70px; */
     margin:0;
     padding:0;
 }
@@ -1161,8 +1766,8 @@ html {
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
-    height:70px;
+    gap:0px;
+    /* height:70px; */
     color:#fff;
     text-decoration:none;
     font-size:18px;
@@ -1450,4 +2055,292 @@ RESPONSIVE
         text-align:center;
     }
 
+}
+
+/* 기본 디자인 (데스크톱 기준: 우측 사이드 고정) */
+.quick-menu {
+    /* position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1050;
+    width: 100px;
+    background-color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 50px; /* 둥근 알약 모양 */
+    /* overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;  */
+}
+
+.quick-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 5px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+    line-height: 1.3;
+    border-bottom: 1px solid #333333;
+    transition: background-color 0.2s ease;
+}
+
+.quick-item:hover {
+    background-color: #f8f9fa;
+    color: #000000;
+}
+
+/* 아이콘 스타일 */
+.quick-item i {
+    font-size: 28px;
+    margin-bottom: 4px;
+    color: #000000;
+}
+
+/* 보라색 강조 메뉴 (출석체크, 오늘본상품, 택배조회) */
+.quick-item.highlight-purple span {
+    color: #a32a82;
+    font-weight: bold;
+}
+
+/* TOP 버튼 디자인 */
+.quick-item.top-btn {
+    background-color: #3f8867;
+    border-bottom: none;
+    padding: 10px 5px;
+    margin: 5px 8px 8px 8px;
+    border-radius: 20px;
+}
+.quick-item.top-btn:hover {
+    background-color: #2d634a;
+}
+
+
+/* 📱 반응형 분기점 (모바일: 화면 최하단 고정 바 형태로 변경) */
+@media (max-width: 767.98px) {
+    .quick-menu {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        flex-direction: row; /* 가로 배열 */
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid #dddddd;
+        box-shadow: 0 -4px 10px rgba(0,0,0,0.08) !important;
+    }
+
+    .quick-item {
+        flex: 1; /* 등분배 */
+        padding: 8px 2px;
+        font-size: 11px;
+        border-bottom: none;
+        border-right: 1px solid #eee;
+    }
+    
+    .quick-item:last-child {
+        border-right: none;
+    }
+
+    .quick-item i {
+        font-size: 18px;
+        margin-bottom: 2px;
+    }
+    
+    /* 모바일에서는 줄바꿈 안되게 설정 */
+    .quick-item br {
+        display: none;
+    }
+
+    /* 모바일 TOP 버튼 조절 */
+    .quick-item.top-btn {
+        margin: 0;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* 커서스타일 시작 */
+/* 커스텀 벚꽃 커서 스타일 */
+        .custom-cursor {
+            width: 32px;
+            height: 32px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none; /* 커서가 아이콘 클릭을 방해하지 않도록 설정 */
+            z-index: 9999;
+            transform: translate(-50%, -50%); /* 마우스 포인터 정중앙에 위치 */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            
+            /* 소지하신 사쿠라 이미지 경로를 아래에 넣으세요 */
+            /* 이미지의 알파 채널(투명도)을 기준으로 마스킹됩니다 */
+            -webkit-mask-image: url('sakura.png'); 
+            mask-image: url('sakura.png');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+
+            /* 초기 기본 색상: 화사한 사쿠라 핑크 */
+            background-color: #ffb7c5; 
+        }
+
+        /* 링크나 버튼에 호버했을 때 커서 약간 키우기 */
+        a:hover ~ .custom-cursor,
+        button:hover ~ .custom-cursor,
+        .btn:hover ~ .custom-cursor {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        /* 클릭 액션 시 순간적으로 커서가 살짝 수축하는 효과 */
+        .custom-cursor.click-active {
+            transform: translate(-50%, -50%) scale(0.9);
+        }
+
+        /* 부트스트랩 테마별 커서 색상 정의 */
+        .cursor-primary   { background-color: #0d6efd !important; }
+        .cursor-secondary { background-color: #6c757d !important; }
+        .cursor-success   { background-color: #198754 !important; }
+        .cursor-danger    { background-color: #dc3545 !important; }
+        .cursor-warning   { background-color: #ffc107 !important; }
+        .cursor-info      { background-color: #0dcaf0 !important; }
+        .cursor-sakura    { background-color: #ffb7c5 !important; } /* 시그니처 핑크 */
+   
+
+    /* 벚꽃 커서 끝 */
+
+
+
+
+/* ==========================================================================
+   [PC 해상도 기본] 오른쪽 고정 사이드 퀵메뉴
+   ========================================================================== */
+.right_quick {
+    position: fixed;
+    top: 70%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1050;
+    width: 70px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 55px; /* 이미지 특유의 긴 타원형 라운딩 */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 각 아이템 공통 스타일 */
+.right_quick_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 4px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    border-bottom: 1px solid #000000;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.right_quick_item:hover {
+    background-color: #f8f9fa;
+    color: #000000;
+}
+
+/* 상단 아이콘 크기 정의 */
+.right_quick_item i {
+    font-size: 26px;
+    margin-bottom: 4px;
+    color: #000000;
+}
+
+/* 하단 3개 메뉴: 보라색 아웃라인 텍스트 느낌 구현 */
+.right_quick_item.quick_purple span {
+    color: #a32a82;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+/* 최하단 TOP 버튼 */
+.right_quick_item.quick_top {
+    background-color: #3f8867;
+    border-bottom: none;
+    padding: 10px 4px;
+    margin: 6px 10px 10px 10px;
+    border-radius: 20px;
+}
+
+.right_quick_item.quick_top:hover {
+    background-color: #2d634a;
+}
+
+
+/* ==========================================================================
+   [모바일 반응형] 화면 하단 고정 스티커 바로 전환 (768px 미만)
+   ========================================================================== */
+@media (max-width: 767.98px) {
+    .right_quick {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        flex-direction: row; /* 가로로 나열 */
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid #dddddd;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .right_quick_item {
+        flex: 1; /* 가로 공간 균등 분할 */
+        padding: 8px 2px;
+        font-size: 11px;
+        border-bottom: none;
+        border-right: 1px solid #eeeeee;
+    }
+
+    .right_quick_item:last-child {
+        border-right: none;
+    }
+
+    .right_quick_item i {
+        font-size: 18px;
+        margin-bottom: 2px;
+    }
+
+    /* 모바일에서는 강제 줄바꿈 해제 */
+    .right_quick_item br {
+        display: none;
+    }
+
+    /* 모바일 환경에서의 TOP 버튼 최적화 */
+    .right_quick_item.quick_top {
+        margin: 0;
+        border-radius: 0;
+        background-color: #3f8867;
+    }
+}
+
+.top_slide_ad{
+  background:#00D8C1;
+}
+.leftbloom{
+  background: url("../img/img_bg/cos_bg_img.png") no-repeat center;
+  background-size: cover;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, .2);
 }
