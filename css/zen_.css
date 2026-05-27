@@ -1,0 +1,175 @@
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    --mm-line-height: 20px;
+    --mm-listitem-size: 44px;
+    --mm-navbar-size: 44px;
+    --mm-offset-top: 0;
+    --mm-offset-right: 0;
+    --mm-offset-bottom: 0;
+    --mm-offset-left: 0;
+    --mm-color-border: rgba(0, 0, 0, 0.1);
+    --mm-color-button: rgba(0, 0, 0, 0.3);
+    --mm-color-text: rgba(0, 0, 0, 0.75);
+    --mm-color-text-dimmed: rgba(0, 0, 0, 0.3);
+    --mm-color-background: #f3f3f3;
+    --mm-color-background-highlight: rgba(0, 0, 0, 0.05);
+    --mm-color-background-emphasis: rgba(255, 255, 255, 0.4);
+    --mm-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    --mm-iconbar-size: 50px;
+    --mm-iconpanel-size: 50px;
+    --mm-sidebar-collapsed-size: 50px;
+    --mm-sidebar-expanded-size: 440px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    direction: ltr;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin-right: -15px;
+    margin-left: -15px;
+    font-family: 'Nanum Gothic','Helvetica Neue','Helvetica','Apple SD Gothic Neo','NanumBarunGothic','Malgun Gothic',dotum,'Lucida Grande',sans-serif,'Glyphicons Halflings';
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,.1);
+    background: url('../img/defaultbg2.png') repeat scroll 0 0 transparent;
+    padding: 30px 0;
+
+
+
+element.style {
+    padding: 30px 0;
+}
+
+
+    row.shadow.default-main {
+    
+}
+
+.default-main {
+    background: url(../img/defaultbg2.png) repeat scroll 0 0 transparent;
+}
+
+.shadow {
+    -moz-box-shadow: 0 5px 5px 0 rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .1);
+}
+
+:lang(ko) {
+    font-family: 'Nanum Gothic', 'Helvetica Neue', 'Helvetica', 'Apple SD Gothic Neo', 'NanumBarunGothic', 'Malgun Gothic', dotum, 'Lucida Grande', sans-serif, 'Glyphicons Halflings';
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div[Attributes Style] {
+    direction: ltr;
+}
+
+
+[dir="ltr" i] {
+    unicode-bidi: isolate;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+body
+Specificity: (0,0,1)
+ {
+    background: url(../img/halftone.png) repeat scroll 0 0 transparent;
+    position: relative;
+    color: #555;
+    font-family: 'Open Sans', sans-serif, 'Glyphicons Halflings';
+    top: 0 !important;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+:root {
+    --mm-sidebar-collapsed-size: 50px;
+    --mm-sidebar-expanded-size: 440px;
+}
+
+:root {
+    --mm-iconpanel-size
+50px
+: 50px;
+}
+
+:root {
+    --mm-iconbar-size: 50px;
+}
+
+:root {
+    --mm-line-height: 20px;
+    --mm-listitem-size: 44px;
+    --mm-navbar-size: 44px;
+    --mm-offset-top: 0;
+    --mm-offset-right: 0;
+    --mm-offset-bottom: 0;
+    --mm-offset-left: 0;
+    --mm-color-border: rgba(0, 0, 0, 0.1);
+    --mm-color-button: rgba(0, 0, 0, 0.3);
+    --mm-color-text: rgba(0, 0, 0, 0.75);
+    --mm-color-text-dimmed: rgba(0, 0, 0, 0.3);
+    --mm-color-background: #f3f3f3;
+    --mm-color-background-highlight: rgba(0, 0, 0, 0.05);
+    --mm-color-background-emphasis: rgba(255, 255, 255, 0.4);
+    --mm-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+
+
+
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+}
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+    clear: both;
+}
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+}
+:after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
